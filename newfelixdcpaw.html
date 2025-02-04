@@ -1,0 +1,3242 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.3.6" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<title>Top Stats - Elite Insight Log Summary — Multiple Guild Wars 2 log summaries</title>
+<div id="styleArea">
+<style data-tiddler-title="$:/boot/boot.css" data-tiddler-type="text/css" type="text/css">/*
+Basic styles used before we boot up the parsing engine
+*/
+
+/*
+Error message and password prompt
+*/
+
+.tc-error-form {
+	font-family: sans-serif;
+	color: #fff;
+	z-index: 20000;
+	position: fixed;
+	background-color: rgb(255, 75, 75);
+	border: 8px solid rgb(255, 0, 0);
+	border-radius: 8px;
+	width: 50%;
+	margin-left: 25%;
+	margin-top: 4em;
+	padding: 0 2em 1em 2em;
+}
+
+.tc-error-form h1 {
+	text-align: center;
+}
+
+.tc-error-prompt {
+	text-align: center;
+	color: #000;
+}
+
+.tc-error-message {
+	overflow: auto;
+	max-height: 40em;
+	padding-right: 1em;
+	margin: 1em 0;
+	white-space: pre-line;
+}
+
+.tc-password-wrapper {
+    font-family: sans-serif;
+	z-index: 20000;
+	position: fixed;
+	text-align: center;
+	width: 200px;
+	top: 4em;
+	left: 50%;
+	margin-left: -144px; /* - width/2 - paddingHorz/2 - border */
+	padding: 16px 16px 16px 16px;
+	border-radius: 8px;
+}
+
+.tc-password-wrapper {
+	color: #000;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	background-color: rgb(197, 235, 183);
+	border: 8px solid rgb(164, 197, 152);
+}
+
+.tc-password-wrapper form {
+	text-align: left;
+}
+
+.tc-password-wrapper h1 {
+	font-size: 16px;
+	line-height: 20px;
+	padding-bottom: 16px;
+}
+
+.tc-password-wrapper input {
+	width: 100%;
+}
+</style>
+</div>
+<style type="text/css">
+/*
+** Start with the normalize CSS reset, and then belay some of its effects
+*//*! modern-normalize v2.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
+
+/*
+Document
+========
+*/
+
+/**
+Use a better box model (opinionated).
+*/
+
+*,
+::before,
+::after {
+	box-sizing: border-box;
+}
+
+html {
+	/* Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3) */
+	font-family:
+		system-ui,
+		'Segoe UI',
+		Roboto,
+		Helvetica,
+		Arial,
+		sans-serif,
+		'Apple Color Emoji',
+		'Segoe UI Emoji';
+	line-height: 1.15; /* 1. Correct the line height in all browsers. */
+	-webkit-text-size-adjust: 100%; /* 2. Prevent adjustments of font size after orientation changes in iOS. */
+	-moz-tab-size: 4; /* 3. Use a more readable tab size (opinionated). */
+	tab-size: 4; /* 3 */
+}
+
+/*
+Sections
+========
+*/
+
+body {
+	margin: 0; /* Remove the margin in all browsers. */
+}
+
+/*
+Grouping content
+================
+*/
+
+/**
+1. Add the correct height in Firefox.
+2. Correct the inheritance of border color in Firefox. (https://bugzilla.mozilla.org/show_bug.cgi?id=190655)
+*/
+
+hr {
+	height: 0; /* 1 */
+	color: inherit; /* 2 */
+}
+
+/*
+Text-level semantics
+====================
+*/
+
+/**
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+
+abbr[title] {
+	text-decoration: underline dotted;
+}
+
+/**
+Add the correct font weight in Edge and Safari.
+*/
+
+b,
+strong {
+	font-weight: bolder;
+}
+
+/**
+1. Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
+2. Correct the odd 'em' font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+	font-family:
+		ui-monospace,
+		SFMono-Regular,
+		Consolas,
+		'Liberation Mono',
+		Menlo,
+		monospace; /* 1 */
+	font-size: 1em; /* 2 */
+}
+
+/**
+Add the correct font size in all browsers.
+*/
+
+small {
+	font-size: 80%;
+}
+
+/**
+Prevent 'sub' and 'sup' elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+sup {
+	top: -0.5em;
+}
+
+/*
+Tabular data
+============
+*/
+
+/**
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+*/
+
+table {
+	text-indent: 0; /* 1 */
+	border-color: inherit; /* 2 */
+}
+
+/*
+Forms
+=====
+*/
+
+/**
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+	font-family: inherit; /* 1 */
+	font-size: 100%; /* 1 */
+	line-height: 1.15; /* 1 */
+	margin: 0; /* 2 */
+}
+
+/**
+Remove the inheritance of text transform in Edge and Firefox.
+*/
+
+button,
+select {
+	text-transform: none;
+}
+
+/**
+Correct the inability to style clickable types in iOS and Safari.
+*/
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+	-webkit-appearance: button;
+}
+
+/**
+Remove the inner border and padding in Firefox.
+*/
+
+::-moz-focus-inner {
+	border-style: none;
+	padding: 0;
+}
+
+/**
+Restore the focus styles unset by the previous rule.
+*/
+
+:-moz-focusring {
+	outline: 1px dotted ButtonText;
+}
+
+/**
+Remove the additional ':invalid' styles in Firefox.
+See: https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737
+*/
+
+:-moz-ui-invalid {
+	box-shadow: none;
+}
+
+/**
+Remove the padding so developers are not caught out when they zero out 'fieldset' elements in all browsers.
+*/
+
+legend {
+	padding: 0;
+}
+
+/**
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+
+progress {
+	vertical-align: baseline;
+}
+
+/**
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+	height: auto;
+}
+
+/**
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+
+[type='search'] {
+	-webkit-appearance: textfield; /* 1 */
+	outline-offset: -2px; /* 2 */
+}
+
+/**
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+
+::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+/**
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to 'inherit' in Safari.
+*/
+
+::-webkit-file-upload-button {
+	-webkit-appearance: button; /* 1 */
+	font: inherit; /* 2 */
+}
+
+/*
+Interactive
+===========
+*/
+
+/*
+Add the correct display in Chrome and Safari.
+*/
+
+summary {
+	display: list-item;
+}
+input[type="search"] {
+	outline-offset: initial;
+}button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+	outline: 2px solid #5656f3;
+	outline-offset: -2px;
+	border-radius: 0.25em;
+}button:-moz-focusring, input:-moz-focusring, textarea:-moz-focusring, select:-moz-focusring {
+	outline: 2px solid #5656f3;
+	outline-offset: -2px;
+	border-radius: 0.25em;
+}/*
+** Button default styles. Makes them look consistent for all browsers
+*/
+html button {
+	line-height: 1.2;
+	color: inherit;
+	fill: inherit;
+	background: transparent;
+	border-color: #ec6;
+}button:disabled svg {
+	fill: rgba(255, 255, 255, 0.54);
+}/*
+** Basic element styles
+*/html, body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+	text-rendering: optimizeLegibility; /* Enables kerning and ligatures etc. */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}html:-webkit-full-screen {
+	background-color: #212121;
+}body.tc-body {
+	font-size: 12px;
+	line-height: 20px;
+	word-wrap: break-word;
+	
+
+
+	color: rgba(255, 255, 255, 0.7);
+	background-color: #212121;
+	fill: rgba(255, 255, 255, 0.7);
+}/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */h1 {
+	font-size: 2em;
+}h1, h2, h3, h4, h5, h6 {
+	line-height: 1.2;
+	font-weight: normal;
+}pre {
+	display: block;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	word-break: normal;
+	word-wrap: break-word;
+	white-space: pre-wrap;
+	background-color: #2a2a2a;
+	border: 1px solid transparent;
+	padding: 0 3px 2px;
+	border-radius: 3px;
+	font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+}code {
+	color: rgba(255, 255, 255, 0.54);
+	background-color: #2a2a2a;
+	border: 1px solid transparent;
+	white-space: pre-wrap;
+	padding: 0 3px 2px;
+	border-radius: 3px;
+	font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+}blockquote {
+	border-left: 5px solid #212121;
+	margin-left: 25px;
+	padding-left: 10px;
+	quotes: "\201C""\201D""\2018""\2019";
+}blockquote > div {
+	margin-top: 1em;
+	margin-bottom: 1em;
+}blockquote.tc-big-quote {
+	font-family: Georgia, serif;
+	position: relative;
+	background: #2a2a2a;
+	border-left: none;
+	margin-left: 50px;
+	margin-right: 50px;
+	padding: 10px;
+	border-radius: 8px;
+}blockquote.tc-big-quote cite:before {
+	content: "\2014 \2009";
+}blockquote.tc-big-quote:before {
+	font-family: Georgia, serif;
+	color: #212121;
+	content: open-quote;
+	font-size: 8em;
+	line-height: 0.1em;
+	margin-right: 0.25em;
+	vertical-align: -0.4em;
+	position: absolute;
+	left: -50px;
+	top: 42px;
+}blockquote.tc-big-quote:after {
+	font-family: Georgia, serif;
+	color: #212121;
+	content: close-quote;
+	font-size: 8em;
+	line-height: 0.1em;
+	margin-right: 0.25em;
+	vertical-align: -0.4em;
+	position: absolute;
+	right: -80px;
+	bottom: -20px;
+}dl dt {
+	font-weight: bold;
+	margin-top: 6px;
+}textarea,
+input[type=text],
+input[type=search],
+input[type=number],
+input[type=password],
+input[type=email],
+input[type=tel],
+input[type=url],
+input[type=""],
+input:not([type]) {
+	color: rgba(255, 255, 255, 0.7);
+	background: #303030;
+}input[type="checkbox"] {
+	vertical-align: middle;
+}input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+	-webkit-appearance:none;
+}.tc-muted {
+	color: rgba(255, 255, 255, 0.54);
+}svg.tc-image-button {
+	padding: 0px 1px 1px 0px;
+}.tc-icon-wrapper > svg {
+	width: 1em;
+	height: 1em;
+}kbd {
+	display: inline-block;
+	padding: 3px 5px;
+	font-size: 0.8em;
+	line-height: 1.2;
+	color: rgba(255, 255, 255, 0.7);
+	vertical-align: middle;
+	background-color: #303030;
+	border: solid 1px rgba(255, 255, 255, 0.54);
+	border-bottom-color: rgba(255, 255, 255, 0.54);
+	border-radius: 3px;
+	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.54);
+}::selection {
+	background-color: Highlight;
+	color: HighlightText;
+	background-color: ;
+	color: ;
+}.tc-inline-style {
+	background: #ffff78;
+	color: #000000;
+}/* Markdown uses mark element to highlight */mark {
+	background: #ffff78;
+	color: #000000;
+}form.tc-form-inline {
+	display: inline;
+}/*
+Markdown likes putting code elements inside pre elements
+*/
+pre > code {
+	display: block;
+	padding: 0.5em;
+	border: none;
+	white-space: pre-wrap;
+	background-color: inherit;
+	color: inherit;
+	overflow-x: auto;
+}/*
+Table defaults
+*/table {
+	border: 1px solid #3a3a3a;
+	width: auto;
+	max-width: 100%;
+	caption-side: bottom;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	/* next 2 elements needed, since normalize 8.0.1 */
+	border-collapse: collapse;
+	border-spacing: 0;
+}table th, table td {
+	padding: 0 7px 0 7px;
+	border-top: 1px solid #3a3a3a;
+	border-left: 1px solid #3a3a3a;
+}table thead tr td, table th {
+	background-color: rgba(255, 255, 255, 0.1);
+	font-weight: bold;
+}table tfoot tr td {
+	background-color: rgba(255, 255, 255, 0.04);
+}/*
+Table utility classes
+*//* Remove borders from table as used in eg: GettingStarted*/
+.tc-table-no-border,
+.tc-table-no-border th,
+.tc-table-no-border td {
+	border: initial;
+}/* First column in table width will fit to text.*/
+/* This rule makes most sense with tc-first-link-nowrap*/
+.tc-first-col-min-width td:nth-child(1) {
+	width: 1%;
+}/*
+** Utility classes work well with tables but also for other containers
+*//* First link A element will not wrap */
+.tc-first-link-nowrap:first-of-type a {
+	white-space: nowrap;
+}/* Move the table to the center of the container */
+.tc-center {
+	margin-left: auto;
+	margin-right: auto;
+}.tc-max-width {
+	width: 100%;
+}.tc-max-width-80 {
+	max-width: 80%;
+}/* Allow input and textarea to look like the ControlPanel inputs */
+.tc-edit-max-width input,
+.tc-edit-max-width textarea {
+	width: 100%;
+	padding: 3px;
+}/*
+CSV parser plugin
+*/.tc-csv-table {
+	white-space: nowrap;
+}.tc-csv-table th,
+.tc-csv-table td {
+	white-space: pre-line;
+}/*
+Tiddler frame in story river
+*/.tc-tiddler-frame img,
+.tc-tiddler-frame svg,
+.tc-tiddler-frame canvas,
+.tc-tiddler-frame embed,
+.tc-tiddler-frame iframe {
+	max-width: 100%;
+}.tc-tiddler-body > embed,
+.tc-tiddler-body > iframe {
+	width: 100%;
+	height: 600px;
+}:root {
+	color-scheme: dark;
+}/*
+** Links
+*/button.tc-tiddlylink,
+a.tc-tiddlylink {
+	text-decoration: none;
+	font-weight: 500;
+	color: #5656f3;
+	-webkit-user-select: inherit; /* Otherwise the draggable attribute makes links impossible to select */
+	-webkit-touch-callout: none; /* Prevents long presses from bringing up a link preview */
+}.tc-sidebar-lists a.tc-tiddlylink {
+	color: rgba(255, 255, 255, 0.54);
+}.tc-sidebar-lists a.tc-tiddlylink:hover {
+	color: rgba(255, 255, 255, 0.7);
+}button.tc-tiddlylink:hover,
+a.tc-tiddlylink:hover {
+	text-decoration: underline;
+}a.tc-tiddlylink-resolves {
+}a.tc-tiddlylink-shadow {
+	font-weight: bold;
+}a.tc-tiddlylink-shadow.tc-tiddlylink-resolves {
+	font-weight: normal;
+}a.tc-tiddlylink-missing {
+	font-style: italic;
+}a.tc-tiddlylink-external {
+	text-decoration: underline;
+	color: #9e3eb3;
+	background-color: transparent;
+}a.tc-tiddlylink-external:visited {
+	color: #7c318c;
+	background-color: transparent;
+}a.tc-tiddlylink-external:hover {
+	color: ;
+	background-color: transparent;
+}.tc-drop-down a.tc-tiddlylink:hover {
+	color: #303030;
+}/*
+** Drag and drop styles
+*/.tc-tiddler-dragger {
+	position: relative;
+	z-index: -10000;
+}.tc-tiddler-dragger-inner {
+	position: absolute;
+	top: -1000px;
+	left: -1000px;
+	display: inline-block;
+	padding: 8px 20px;
+	font-size: 16.9px;
+	font-weight: bold;
+	line-height: 20px;
+	color: #303030;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 1);
+	white-space: nowrap;
+	vertical-align: baseline;
+	background-color: rgba(255, 255, 255, 0.7);
+	border-radius: 20px;
+}.tc-tiddler-dragger-cover {
+	position: absolute;
+	background-color: #212121;
+}.tc-page-container > .tc-dropzone {
+	min-height: 100vh;
+}.tc-dropzone {
+	position: relative;
+}.tc-dropzone.tc-dragover:before {
+	z-index: 10000;
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: #ec6;
+	text-align: center;
+	content: "Drop now (or use the 'Escape' key to cancel)";
+}.tc-droppable > .tc-droppable-placeholder {
+	display: none;
+}.tc-droppable.tc-dragover > .tc-droppable-placeholder {
+	display: block;
+	border: 2px dashed #ec6;
+}.tc-draggable {
+	cursor: move;
+}.tc-sidebar-tab-open .tc-droppable-placeholder, .tc-tagged-draggable-list .tc-droppable-placeholder,
+.tc-links-draggable-list .tc-droppable-placeholder {
+	line-height: 2em;
+	height: 2em;
+}.tc-sidebar-tab-open-item {
+	position: relative;
+}.tc-sidebar-tab-open .tc-btn-invisible.tc-btn-mini svg {
+	font-size: 0.7em;
+	fill: rgba(255, 255, 255, 0.54);
+}/*
+** Plugin reload warning
+*/.tc-plugin-reload-warning {
+	z-index: 1000;
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: #303030;
+	text-align: center;
+}/*
+** Buttons
+*/button svg, button img, label svg, label img {
+	vertical-align: middle;
+}.tc-btn-invisible {
+	padding: 0;
+	margin: 0;
+	background: none;
+	border: none;
+	cursor: pointer;
+	color: rgba(255, 255, 255, 0.7);
+	fill: rgba(255, 255, 255, 0.7);
+}button:disabled.tc-btn-invisible  {
+	cursor: default;
+	color: rgba(255, 255, 255, 0.54);
+}.tc-btn-boxed {
+	font-size: 0.6em;
+	padding: 0.2em;
+	margin: 1px;
+	background: none;
+	border: 1px solid #5d5d5d;
+	border-radius: 0.25em;
+}html body.tc-body .tc-btn-boxed svg {
+	font-size: 1.6666em;
+}.tc-btn-boxed:hover {
+	background: rgba(255, 255, 255, 0.54);
+	color: #303030;
+}html body.tc-body .tc-btn-boxed:hover svg {
+	fill: #303030;
+}.tc-btn-rounded {
+	font-size: 0.5em;
+	line-height: 2;
+	padding: 0em 0.3em 0.2em 0.4em;
+	margin: 1px;
+	border: 1px solid rgba(255, 255, 255, 0.54);
+	background: rgba(255, 255, 255, 0.54);
+	color: #303030;
+	border-radius: 2em;
+}html body.tc-body .tc-btn-rounded svg {
+	font-size: 1.6666em;
+	fill: #303030;
+}.tc-btn-rounded:hover {
+	border: 1px solid rgba(255, 255, 255, 0.54);
+	background: #303030;
+	color: rgba(255, 255, 255, 0.54);
+}html body.tc-body .tc-btn-rounded:hover svg {
+	fill: rgba(255, 255, 255, 0.54);
+}.tc-btn-icon svg {
+	height: 1em;
+	width: 1em;
+	fill: rgba(255, 255, 255, 0.54);
+}.tc-btn-text {
+	margin-left: 7px;
+}/* used for documentation "fake" buttons */
+.tc-btn-standard {
+	line-height: 1.8;
+	color: #667;
+	background-color: #e0e0e0;
+	border: 1px solid #888;
+	padding: 2px 1px 2px 1px;
+	margin: 1px 4px 1px 4px;
+}.tc-btn-big-green {
+	display: inline-block;
+	padding: 8px;
+	margin: 4px 8px 4px 8px;
+	background: #5656f3;
+	color: rgba(255, 255, 255, 0.7);
+	fill: rgba(255, 255, 255, 0.7);
+	border: none;
+	border-radius: 2px;
+	font-size: 1.2em;
+	line-height: 1.4em;
+	text-decoration: none;
+}.tc-btn-big-green svg,
+.tc-btn-big-green img {
+	height: 2em;
+	width: 2em;
+	vertical-align: middle;
+	fill: rgba(255, 255, 255, 0.7);
+}.tc-primary-btn {
+	background: #5656f3;
+}.tc-sidebar-lists input {
+	color: rgba(255, 255, 255, 0.7);
+}.tc-sidebar-lists button {
+	color: rgba(255, 255, 255, 0.7);
+	fill: rgba(255, 255, 255, 0.7);
+}.tc-sidebar-lists button.tc-btn-mini {
+	color: rgba(255, 255, 255, 0.38);
+}.tc-sidebar-lists button.tc-btn-mini:hover {
+	color: rgba(255, 255, 255, 0.54);
+}.tc-sidebar-lists button small {
+	color: rgba(255, 255, 255, 0.7);
+}button svg.tc-image-button, button .tc-image-button img {
+	height: 1em;
+	width: 1em;
+}.tc-unfold-banner {
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	background: none;
+	border: none;
+	width: 100%;
+	width: calc(100% + 2px);
+	margin-left: -43px;
+	text-align: center;
+	border-top: 2px solid #454545;
+	margin-top: 4px;
+}.tc-unfold-banner:hover {
+	background: #454545;
+	border-top: 2px solid #454545;
+}.tc-unfold-banner svg, .tc-fold-banner svg {
+	height: 0.75em;
+	fill: #5d5d5d;
+}.tc-unfold-banner:hover svg, .tc-fold-banner:hover svg {
+	fill: #494949;
+}.tc-fold-banner {
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	background: none;
+	border: none;
+	width: 23px;
+	text-align: center;
+	margin-left: -35px;
+	top: 6px;
+	bottom: 6px;
+}.tc-fold-banner:hover {
+	background: #454545;
+}@media (max-width: 999px) {.tc-unfold-banner {
+		position: static;
+		width: calc(100% + 59px);
+	}.tc-fold-banner {
+		width: 16px;
+		margin-left: -16px;
+		font-size: 0.75em;
+	}}/*
+** Tags and missing tiddlers
+*/.tc-tag-list-item {
+	position: relative;
+	display: inline-block;
+}.tc-tags-wrapper {
+	margin: 4px 0 14px 0;
+}.tc-tags-wrapper .tc-tag-list-item {
+	margin-right: 7px;
+}.tc-missing-tiddler-label {
+	font-style: italic;
+	font-weight: normal;
+	display: inline-block;
+	font-size: 11.844px;
+	line-height: 14px;
+	white-space: nowrap;
+	vertical-align: baseline;
+}.tc-block-tags-dropdown > .tc-btn-invisible:hover {
+	background-color: #5656f3;
+}button.tc-tag-label, span.tc-tag-label {
+	display: inline-block;
+	padding: 0.16em 0.7em;
+	font-size: 0.9em;
+	font-weight: normal;
+	line-height: 1.2em;
+	color: inherit;
+	white-space: break-spaces;
+	vertical-align: baseline;
+	background-color: #ec6;
+	border-radius: 1em;
+}.tc-sidebar-scrollable .tc-tag-label {
+	text-shadow: none;
+}.tc-untagged-separator {
+	border: 0;
+	height: 1px;
+	background: #3a3a3a;
+}button.tc-untagged-label {
+	background-color: rgba(255, 255, 255, 0.12);
+}.tc-tag-label svg, .tc-tag-label img {
+	height: 1em;
+	width: 1em;
+	margin-right: 3px;
+	margin-bottom: 1px;
+	vertical-align: bottom;
+}.tc-edit-tags button.tc-remove-tag-button svg {
+	font-size: 0.7em;
+	vertical-align: middle;
+}.tc-tag-manager-table .tc-tag-label {
+}.tc-tag-manager-tag {
+	width: 100%;
+}button.tc-btn-invisible.tc-remove-tag-button {
+	outline: none;
+}.tc-tag-button-selected,
+.tc-list-item-selected a.tc-tiddlylink, a.tc-list-item-selected {
+	background-color: #5656f3;
+	color: #303030;
+}/*
+** Page layout
+*/.tc-topbar {
+	position: fixed;
+	z-index: 1200;
+}.tc-topbar-left {
+	left: 29px;
+	top: 5px;
+}.tc-topbar-right {
+	top: 5px;
+	right: 29px;
+}@media (max-width: 999px) {.tc-topbar-right {
+		right: 10px;
+	}}.tc-topbar button {
+	padding: 8px;
+}.tc-topbar svg {
+	fill: rgba(255, 255, 255, 0.54);
+}.tc-topbar button:hover svg {
+	fill: rgba(255, 255, 255, 0.7);
+}@media (max-width: 999px) {.tc-show-sidebar-btn svg.tc-image-chevron-left, .tc-hide-sidebar-btn svg.tc-image-chevron-right {
+		transform: rotate(-90deg);
+	}}.tc-sidebar-header {
+	color: rgba(255, 255, 255, 0.54);
+	fill: rgba(255, 255, 255, 0.54);
+}.tc-sidebar-header .tc-title a.tc-tiddlylink-resolves {
+	font-weight: normal;
+}.tc-sidebar-header .tc-sidebar-lists p {
+	margin-top: 3px;
+	margin-bottom: 3px;
+}.tc-sidebar-header .tc-missing-tiddler-label {
+	color: rgba(255, 255, 255, 0.54);
+}.tc-advanced-search input {
+	width: 60%;
+}.tc-search a svg {
+	width: 1.2em;
+	height: 1.2em;
+	vertical-align: middle;
+}.tc-page-controls {
+	margin-top: 14px;
+	margin-bottom: 14px;
+	font-size: 1.5em;
+}.tc-page-controls .tc-drop-down {
+	font-size: 1rem;
+}.tc-page-controls button {
+	margin-right: 0.5em;
+}.tc-page-controls a.tc-tiddlylink:hover {
+	text-decoration: none;
+}.tc-page-controls img {
+	width: 1em;
+}.tc-page-controls svg {
+	fill: #5d5d5d;
+}.tc-page-controls button:hover svg, .tc-page-controls a:hover svg {
+	fill: #494949;
+}.tc-sidebar-lists .tc-menu-list-item {
+	white-space: nowrap;
+}.tc-menu-list-count {
+	font-weight: bold;
+}.tc-menu-list-subitem {
+	padding-left: 7px;
+}.tc-story-river {
+	position: relative;
+}@media (max-width: 999px) {.tc-sidebar-header {
+		padding: 14px;
+		min-height: 32px;
+		margin-top: 0px;
+		transition:  min-height 400ms ease-in-out, padding-top 400ms ease-in-out, padding-bottom 400ms ease-in-out;
+	}
+
+		.tc-sidebar-header {
+			min-height: 0;
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+
+	.tc-story-river {
+		position: relative;
+		padding: 0;
+	}
+}@media (min-width: 1000px) {.tc-message-box {
+		margin: 21px -21px 21px -21px;
+	}.tc-sidebar-scrollable {
+		position: fixed;
+		top: 0px;
+		left: 90;
+		bottom: 0;
+		right: 0;
+		overflow-y: auto;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+		margin: 0 0 0 -42px;
+		padding: 71px 0 28px 42px;
+	}html[dir="rtl"] .tc-sidebar-scrollable {
+		left: auto;
+		right: 90;
+	}.tc-story-river {
+		position: relative;
+		left: 0px;
+		top: 0px;
+		width: 90%;
+		padding: 42px 42px 42px 42px;
+	}
+
+	.tc-story-river {
+		width: calc(100% - 0px);
+	}
+
+.tc-story-river.tc-static-story-river {
+		margin-right: 0;
+		padding-right: 42px;
+	}}@media print {body.tc-body {
+		background-color: transparent;
+	}.tc-sidebar-header, .tc-topbar {
+		display: none;
+	}.tc-story-river {
+		margin: 0;
+		padding: 0;
+	}.tc-story-river .tc-tiddler-frame {
+		margin: 0;
+		border: none;
+		padding: 0;
+	}
+}/*
+** Tiddler styles
+*/.tc-tiddler-frame {
+	position: relative;
+	margin-bottom: 28px;
+	background-color: #303030;
+	border: 1px solid rgb(55,55,55);
+}
+.tc-tiddler-info {
+	overflow: hidden;
+	padding: 14px 42px 14px 42px;
+	background-color: #454545;
+	border-top: 1px solid #454545;
+	border-bottom: 1px solid #454545;
+}.tc-tiddler-info p {
+	margin-top: 3px;
+	margin-bottom: 3px;
+}.tc-tiddler-info .tc-tab-buttons button.tc-tab-selected {
+	background-color: rgba(255, 255, 255, 0.04);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}@media (max-width: 999px) {.tc-tiddler-info {
+		padding: 14px 14px 14px 14px;
+	}}.tc-view-field-table {
+	width: 100%;
+}.tc-view-field-name {
+	width: 1%; /* Makes this column be as narrow as possible */
+	white-space: nowrap;
+	vertical-align: top;
+	text-align: right;
+	font-style: italic;
+	font-weight: normal;
+}.tc-view-field-value {
+	word-break: break-all;
+}@media (max-width: 999px) {
+	.tc-tiddler-frame {
+		padding: 14px 14px 14px 14px;
+		margin-bottom: .5em;
+	}.tc-tiddler-info {
+		margin: 0 -14px 0 -14px;
+	}
+}@media (min-width: 1000px) {
+	.tc-tiddler-frame {
+		padding: 28px 42px 42px 42px;
+		width: 90%;
+		border-radius: 2px;
+	}
+
+	.tc-tiddler-frame {
+		width: 100%;
+	}
+
+.tc-tiddler-info {
+		margin: 0 -42px 0 -42px;
+	}
+}.tc-site-title,
+.tc-titlebar {
+	font-weight: normal;
+	font-size: 2.35em;
+	line-height: 1.35em;
+	color: #FFFFFF;
+	margin: 0;
+}.tc-site-title {
+	color: rgba(255, 255, 255, 0.7);
+}.tc-tiddler-title-icon {
+	vertical-align: middle;
+	margin-right: .1em;
+}.tc-tiddler-title-icon svg {
+	width: 0.9em;
+	height: 0.9em;
+}.tc-system-title-prefix {
+	color: rgba(255, 255, 255, 0.54);
+}.tc-tiddler-lazy-loading {
+	height: 4px;
+	width: 100%;
+	background: no-repeat linear-gradient(#303030 0 0),no-repeat linear-gradient(#303030 0 0),#5656f3;
+	background-size: 60% 100%;
+	animation: animation-loading-progress 3s infinite;
+}@keyframes animation-loading-progress {
+	0%   {background-position:-150% 0,-150% 0}
+	66%  {background-position: 250% 0,-150% 0}
+	100% {background-position: 250% 0, 250% 0}
+}.tc-titlebar h2 {
+	font-size: 1em;
+	display: inline;
+}.tc-titlebar img {
+	height: 1em;
+}.tc-subtitle {
+	font-size: 0.9em;
+	color: rgba(255, 255, 255, 0.54);
+	font-weight: normal;
+}.tc-subtitle .tc-tiddlylink {
+	margin-right: .3em;
+}.tc-tiddler-missing .tc-title {
+	font-style: italic;
+	font-weight: normal;
+}.tc-tiddler-frame .tc-tiddler-controls {
+	float: right;
+	padding: 3px; /* make space for outline */
+}.tc-tiddler-controls .tc-drop-down {
+	font-size: 0.6em;
+}.tc-tiddler-controls .tc-drop-down .tc-drop-down {
+	font-size: 1em;
+}.tc-tiddler-controls > span > button,
+.tc-tiddler-controls > span > span > button,
+.tc-tiddler-controls > span > span > span > button {
+	vertical-align: baseline;
+	margin-left:5px;
+}.tc-tiddler-controls button svg, .tc-tiddler-controls button img,
+.tc-search button svg, .tc-search a svg {
+	fill: #5d5d5d;
+}.tc-tiddler-controls button svg, .tc-tiddler-controls button img {
+	height: 0.75em;
+}.tc-search button svg, .tc-search a svg {
+	height: 1.2em;
+	width: 1.2em;
+	margin: 0 0.25em;
+}.tc-tiddler-controls button.tc-selected svg,
+.tc-page-controls button.tc-selected svg  {
+	fill: #494949;
+}.tc-tiddler-controls button.tc-btn-invisible:hover svg,
+.tc-search button:hover svg, .tc-search a:hover svg {
+	fill: #494949;
+}@media print {
+	.tc-tiddler-controls {
+		display: none;
+	}
+}.tc-tiddler-help { /* Help prompts within tiddler template */
+	color: rgba(255, 255, 255, 0.54);
+	margin-top: 14px;
+}.tc-tiddler-help a.tc-tiddlylink {
+	color: rgba(255, 255, 255, 0.12);
+}.tc-tiddler-frame .tc-edit-texteditor {
+	width: 100%;
+	margin: 4px 0 4px 0;
+}.tc-tiddler-frame input.tc-edit-texteditor,
+.tc-tiddler-frame textarea.tc-edit-texteditor,
+.tc-tiddler-frame iframe.tc-edit-texteditor,
+.tc-tiddler-frame select.tc-edit-texteditor {
+	padding: 3px 3px 3px 3px;
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	line-height: 1.3em;
+	font-family: ;
+}.tc-tiddler-frame input.tc-edit-texteditor,
+.tc-tiddler-frame textarea.tc-edit-texteditor,
+.tc-tiddler-frame iframe.tc-edit-texteditor {
+	-webkit-appearance: none;
+}.tc-tiddler-frame input.tc-edit-texteditor,
+.tc-tiddler-frame select.tc-edit-texteditor,
+.tc-tiddler-frame textarea.tc-edit-texteditor {
+	background-color: transparent;
+}.tc-tiddler-frame iframe.tc-edit-texteditor {
+	background-color: #303030;
+}.tc-tiddler-frame .tc-edit-fields input.tc-edit-fieldeditor,
+.tc-tiddler-frame .tc-edit-fields select.tc-edit-fieldeditor,
+.tc-tiddler-frame .tc-edit-fields textarea.tc-edit-fieldeditor {
+	margin: 0;
+	padding: 2px 3px;
+}.tc-tiddler-frame .tc-binary-warning {
+	width: 100%;
+	height: 5em;
+	text-align: center;
+	padding: 3em 3em 6em 3em;
+	background: #303030;
+	border: 1px solid rgba(255, 255, 255, 0.12);
+}canvas.tc-edit-bitmapeditor  {
+	border: 6px solid ;
+	cursor: crosshair;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	margin-top: 6px;
+	margin-bottom: 6px;
+}.tc-edit-bitmapeditor-width {
+	display: block;
+}.tc-edit-bitmapeditor-height {
+	display: block;
+}.tc-single-tiddler-window .tc-tiddler-body,
+.tc-tiddler-frame .tc-tiddler-body {
+	font-size: 13px;
+	line-height: 22px;
+}.tc-titlebar, .tc-tiddler-edit-title {
+	overflow: hidden; /* https://github.com/TiddlyWiki/TiddlyWiki5/issues/282 */
+}/*
+* Tiddler in a new window.
+* Also see: .tc-single-tiddler-window .tc-tiddler-body, above
+*/html body.tc-body.tc-single-tiddler-window {
+	margin: 1em;
+	background: #303030;
+}.tc-single-tiddler-window img,
+.tc-single-tiddler-window svg,
+.tc-single-tiddler-window canvas,
+.tc-single-tiddler-window embed,
+.tc-single-tiddler-window iframe {
+	max-width: 100%;
+}/*
+** Editor
+*/.tc-editor-toolbar {
+	margin-top: 8px;
+}.tc-tiddler-frame .tc-tiddler-editor.tc-tiddler-preview .tc-editor-toolbar,
+.tc-tiddler-frame .tc-tiddler-editor.tc-tiddler-preview-hidden .tc-editor-toolbar {
+	grid-area: toolbar;
+}.tc-editor-toolbar button {
+	vertical-align: middle;
+	background-color: #5d5d5d;
+	color: #494949;
+	fill: #494949;
+	border-radius: 4px;
+	padding: 3px;
+	margin: 2px 0 2px 4px;
+}.tc-editor-toolbar button.tc-text-editor-toolbar-item-adjunct {
+	margin-left: 1px;
+	width: 1em;
+	border-radius: 8px;
+}.tc-editor-toolbar button.tc-text-editor-toolbar-item-start-group {
+	margin-left: 11px;
+}.tc-editor-toolbar button.tc-selected {
+	background-color: #5656f3;
+}.tc-editor-toolbar button svg {
+	width: 1.6em;
+	height: 1.2em;
+}.tc-editor-toolbar .tc-drop-down button.tc-btn-mini {
+	padding: 2px 4px;
+}.tc-editor-toolbar button:hover {
+	background-color: #494949;
+	fill: #303030;
+	color: #303030;
+}.tc-editor-toolbar .tc-text-editor-toolbar-more {
+	white-space: normal;
+}.tc-editor-toolbar .tc-text-editor-toolbar-more button {
+	display: inline-block;
+	padding: 3px;
+	width: auto;
+}.tc-editor-toolbar .tc-search-results {
+	padding: 0;
+}.tc-editor-toolbar button.tc-editortoolbar-stamp-button + .tc-popup .tc-drop-down > p {
+	margin: 0;
+	padding: 0;
+}.tc-editor-toolbar button.tc-editortoolbar-stamp-button + .tc-popup .tc-drop-down a.tc-tiddlylink {
+	font-weight: normal;
+}/*
+** Adjustments for fluid-fixed mode
+*/@media (min-width: 1000px) {.tc-story-river {
+		padding-right: 0;
+		position: relative;
+		width: auto;
+		left: 0;
+		margin-left: 0px;
+		margin-right: 15%;
+	}.tc-tiddler-frame {
+		width: 100%;
+	}.tc-sidebar-scrollable {
+		left: auto;
+		bottom: 0;
+		right: 0;
+		width: 15%;
+	}body.tc-body .tc-page-container.tc-page-view-zoomin .tc-tiddler-frame {
+		width: 100%;
+		width: calc(100% - 42px);
+	}.tc-story-river {
+		padding-right: 3em;
+		margin-right: 0;
+	}body.tc-body .tc-page-container.tc-page-view-zoomin .tc-tiddler-frame {
+		width: 100%;
+		width: calc(100% - 84px);
+	}}/*
+** Toolbar buttons
+*/.tc-page-controls svg.tc-image-new-button {
+	fill: ;
+}.tc-page-controls svg.tc-image-options-button {
+	fill: ;
+}.tc-page-controls svg.tc-image-save-button {
+	fill: ;
+}.tc-tiddler-controls button svg.tc-image-info-button {
+	fill: ;
+}.tc-tiddler-controls button svg.tc-image-edit-button {
+	fill: ;
+}.tc-tiddler-controls button svg.tc-image-close-button {
+	fill: ;
+}.tc-tiddler-controls button svg.tc-image-delete-button {
+	fill: ;
+}.tc-tiddler-controls button svg.tc-image-cancel-button {
+	fill: ;
+}.tc-tiddler-controls button svg.tc-image-done-button {
+	fill: ;
+}.tc-page-controls svg.tc-image-layout-button {
+	fill: ;
+}/*
+** Tiddler edit mode
+*/.tc-tiddler-edit-frame em.tc-edit {
+	color: rgba(255, 255, 255, 0.54);
+	font-style: normal;
+}.tc-edit-type-dropdown a.tc-tiddlylink-missing {
+	font-style: normal;
+}.tc-type-selector .tc-edit-typeeditor {
+	width: auto;
+}.tc-type-selector-dropdown-wrapper {
+	display: inline-block;
+}.tc-type-selector-dropdown-wrapper {
+		min-width: calc(32ch + 4em);
+	}.tc-type-selector-dropdown-wrapper input.tc-edit-typeeditor {
+		min-width: 32ch;
+	}.tc-edit-tags {
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	padding: 4px 8px 4px 8px;
+}.tc-edit-add-tag {
+	display: inline-block;
+}.tc-edit-add-tag .tc-add-tag-name input {
+	width: 50%;
+}.tc-edit-add-tag .tc-keyboard {
+	display:inline;
+}.tc-edit-tags .tc-tag-label {
+	display: inline-block;
+}.tc-edit-tags-list {
+	margin: 14px 0 14px 0;
+}.tc-remove-tag-button {
+	padding-left: 4px;
+}.tc-tiddler-editor {
+	display: grid;
+}.tc-tiddler-frame .tc-tiddler-editor.tc-tiddler-preview {
+	grid-template-areas:
+		"toolbar toolbar"
+		"editor preview";
+	grid-template-columns: repeat(2, minmax(0px, 1fr));
+	grid-template-rows: auto 1fr;
+}.tc-tiddler-frame .tc-tiddler-editor.tc-tiddler-preview-hidden {
+	grid-template-areas:
+		"toolbar"
+		"editor";
+	grid-template-columns: 1fr;
+	grid-template-rows: auto 1fr;
+}.tc-tiddler-frame .tc-tiddler-editor.tc-tiddler-preview .tc-tiddler-preview-preview {
+	grid-area: preview;
+	overflow-wrap: anywhere;
+	word-break: normal;
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	margin: 4px 0 3px 3px;
+	padding: 3px 3px 3px 3px;
+}.tc-tiddler-frame .tc-tiddler-editor.tc-tiddler-preview .tc-edit-texteditor,
+.tc-tiddler-frame .tc-tiddler-editor.tc-tiddler-preview-hidden .tc-edit-texteditor {
+	grid-area: editor;
+}.tc-tiddler-frame .tc-tiddler-editor.tc-tiddler-preview canvas.tc-edit-bitmapeditor,
+.tc-tiddler-frame .tc-tiddler-editor.tc-tiddler-preview-hidden canvas.tc-edit-bitmapeditor {
+	grid-area: editor;
+	max-width: 100%;
+}.tc-edit-fields {
+	width: 100%;
+}.tc-edit-fields.tc-edit-fields-small {
+	margin-top: 0;
+	margin-bottom: 0;
+}.tc-edit-fields table, .tc-edit-fields tr, .tc-edit-fields td {
+	border: none;
+	padding: 4px;
+}.tc-edit-fields > tbody > .tc-edit-field:nth-child(odd) {
+	background-color: rgba(255, 255, 255, 0.04);
+}.tc-edit-fields > tbody > .tc-edit-field:nth-child(even) {
+	background-color: rgba(255, 255, 255, 0.1);
+}.tc-edit-field-name {
+	text-align: right;
+}.tc-edit-field-value input {
+	width: 100%;
+}.tc-edit-field-remove {
+}.tc-edit-field-remove svg {
+	height: 1em;
+	width: 1em;
+	fill: rgba(255, 255, 255, 0.54);
+	vertical-align: middle;
+}.tc-edit-field-add-name-wrapper input.tc-edit-texteditor {
+	width: auto;
+}.tc-edit-field-add-name-wrapper {
+	display: inline-block;
+}.tc-edit-field-add-value {
+	display: inline-block;
+}@media (min-width: 1000px) {.tc-edit-field-add-value {
+		width: 35%;
+	}}.tc-edit-field-add-button {
+	display: inline-block;
+	width: 10%;
+}/*
+** Tiddler editor dropzone
+*/.tc-dropzone-editor {
+	position:relative;
+}.tc-dropzone-editor.tc-dragover .tc-editor-toolbar::after{
+	z-index: 10000;
+	top:0;
+	left:0;
+	right:0;
+	height: 100%;
+	background: #ec6;
+	content: "Drop now (or use the 'Escape' key to cancel)";
+	pointer-events: none;
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #303030;
+	border: 4px dashed rgba(255, 255, 255, 0.12);
+	font-weight: bold;
+	font-size: 150%;
+	opacity: 0.8;
+	color: rgba(255, 255, 255, 0.7);
+}.tc-editor-importpopup {
+	width: 100%;
+	height: 100%;
+}.tc-editor-import {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: #2a2a2a;
+	box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.7);
+	padding: 10px;
+	width: 96%;
+	border: 1px solid #5d5d5d;
+	text-align:center;
+}.tc-editor-import img {
+	max-height: 500px;
+}/*
+** Storyview Classes
+*/.tc-viewswitcher .tc-image-button {
+	margin-right: .3em;
+}.tc-page-container.tc-page-view-zoomin .tc-tiddler-frame {
+	position: absolute;
+	display: block;
+	width: 100%;
+}@media (min-width: 1000px) {.tc-page-container.tc-page-view-zoomin .tc-tiddler-frame {
+		width: calc(100% - 84px);
+	}}/*
+** Dropdowns
+*/.tc-btn-dropdown {
+	text-align: left;
+}.tc-btn-dropdown svg, .tc-btn-dropdown img {
+	height: 1em;
+	width: 1em;
+	fill: rgba(255, 255, 255, 0.54);
+}.tc-drop-down-wrapper {
+	position: relative;
+}.tc-drop-down {
+	min-width: 380px;
+	border: 1px solid #424242;
+	background-color: #424242;
+	padding: 7px 0 7px 0;
+	margin: 4px 0 0 0;
+	white-space: nowrap;
+	text-shadow: none;
+	line-height: 1.4;
+}.tc-drop-down .tc-drop-down {
+	margin-left: 14px;
+}.tc-drop-down button svg, .tc-drop-down a svg  {
+	fill: rgba(255, 255, 255, 0.7);
+}.tc-drop-down button:disabled svg {
+	fill: rgba(255, 255, 255, 0.54);
+}.tc-drop-down button.tc-btn-invisible:hover svg {
+	fill: #303030;
+}.tc-drop-down .tc-drop-down-info {
+	padding-left: 14px;
+}.tc-drop-down p {
+	padding: 0 14px 0 14px;
+}.tc-drop-down svg {
+	width: 1em;
+	height: 1em;
+}.tc-drop-down img {
+	width: 1em;
+}.tc-drop-down a, .tc-drop-down button {
+	display: block;
+	padding: 0 14px 0 14px;
+	width: 100%;
+	text-align: left;
+	color: rgba(255, 255, 255, 0.7);
+	line-height: 1.4;
+}.tc-drop-down .tc-tab-set .tc-tab-buttons button {
+	display: inline-block;
+	width: auto;
+	margin-bottom: 0px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}.tc-drop-down .tc-prompt {
+	padding: 0 14px;
+}.tc-drop-down .tc-chooser {
+	border: none;
+}.tc-drop-down .tc-chooser .tc-swatches-horiz {
+	font-size: 0.4em;
+	padding-left: 1.2em;
+}.tc-drop-down .tc-file-input-wrapper {
+	width: 100%;
+}.tc-drop-down .tc-file-input-wrapper button {
+	color: rgba(255, 255, 255, 0.7);
+}.tc-drop-down a:hover, .tc-drop-down button:hover, .tc-drop-down .tc-file-input-wrapper:hover button {
+	color: #303030;
+	background-color: #5656f3;
+	text-decoration: none;
+}.tc-drop-down .tc-tab-buttons button {
+	background-color: #050505;
+}.tc-drop-down .tc-tab-buttons button.tc-tab-selected {
+	background-color: #424242;
+	border-bottom: 1px solid #424242;
+}.tc-drop-down-bullet {
+	display: inline-block;
+	width: 0.5em;
+}.tc-drop-down .tc-tab-contents a {
+	padding: 0 0.5em 0 0.5em;
+}.tc-block-dropdown-wrapper {
+	position: relative;
+}.tc-block-dropdown {
+	position: absolute;
+	min-width: 220px;
+	border: 1px solid #424242;
+	background-color: #424242;
+	padding: 7px 0;
+	margin: 4px 0 0 0;
+	white-space: nowrap;
+	z-index: 1000;
+	text-shadow: none;
+}.tc-block-dropdown.tc-search-drop-down {
+	margin-left: -12px;
+}.tc-block-dropdown a {
+	display: block;
+	padding: 4px 14px 4px 14px;
+}.tc-block-dropdown.tc-search-drop-down a {
+	display: block;
+	padding: 0px 10px 0px 10px;
+}.tc-drop-down .tc-dropdown-item-plain,
+.tc-block-dropdown .tc-dropdown-item-plain {
+	padding: 4px 14px 4px 7px;
+}.tc-drop-down .tc-dropdown-item,
+.tc-block-dropdown .tc-dropdown-item {
+	padding: 4px 14px 4px 7px;
+	color: rgba(255, 255, 255, 0.54);
+}.tc-block-dropdown a.tc-tiddlylink:hover {
+	color: #303030;
+	background-color: #5656f3;
+	text-decoration: none;
+}.tc-search-results {
+	padding: 0 7px 0 7px;
+}.tc-image-chooser, .tc-colour-chooser {
+	white-space: normal;
+}.tc-image-chooser a,
+.tc-colour-chooser a {
+	display: inline-block;
+	vertical-align: top;
+	text-align: center;
+	position: relative;
+}.tc-image-chooser a {
+	border: 1px solid rgba(255, 255, 255, 0.54);
+	padding: 2px;
+	margin: 2px;
+	width: 4em;
+	height: 4em;
+}.tc-colour-chooser a {
+	padding: 3px;
+	width: 2em;
+	height: 2em;
+	vertical-align: middle;
+}.tc-image-chooser a:hover,
+.tc-colour-chooser a:hover {
+	background: #5656f3;
+	padding: 0px;
+	border: 3px solid #5656f3;
+}.tc-image-chooser a svg,
+.tc-image-chooser a img {
+	display: inline-block;
+	width: auto;
+	height: auto;
+	max-width: 3.5em;
+	max-height: 3.5em;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}/* Make search dropdown visible on small screens. issue #7003 */
+@media (max-width: 1000px) {.tc-sidebar-search .tc-block-dropdown-wrapper {
+		position: initial;
+	}}/*
+** Modals
+*/.tc-modal-wrapper {
+	position: fixed;
+	overflow: auto;
+	overflow-y: scroll;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 900;
+}.tc-modal-backdrop {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1000;
+	background-color: #212121;
+}.tc-modal {
+	z-index: 1100;
+	background-color: #303030;
+	border: 1px solid rgba(255, 255, 255, 0.12);
+}@media (max-width: 55em) {
+	.tc-modal {
+		position: fixed;
+		top: 1em;
+		left: 1em;
+		right: 1em;
+	}.tc-modal-body {
+		overflow-y: auto;
+		max-height: 400px;
+		max-height: 60vh;
+	}
+}@media (min-width: 55em) {
+	.tc-modal {
+		position: fixed;
+		top: 2em;
+		left: 25%;
+		width: 50%;
+	}.tc-modal-body {
+		overflow-y: auto;
+		max-height: 400px;
+		max-height: 60vh;
+	}
+}.tc-modal-header {
+	padding: 9px 15px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}.tc-modal-header h3 {
+	margin: 0;
+	line-height: 30px;
+}.tc-modal-header img, .tc-modal-header svg {
+	width: 1em;
+	height: 1em;
+}.tc-modal-body {
+	padding: 15px;
+}.tc-modal-footer {
+	padding: 14px 15px 15px;
+	margin-bottom: 0;
+	text-align: right;
+	background-color: #303030;
+	border-top: 1px solid #303030;
+}.tc-modal-prevent-scroll {
+	overflow: hidden;
+}/*
+** Centered modals
+*/
+.tc-modal-centered .tc-modal {
+	width: auto;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) !important;
+}/*
+** Notifications
+*/.tc-notification {
+	position: fixed;
+	top: 14px;
+	right: 42px;
+	z-index: 1300;
+	max-width: 280px;
+	padding: 0 14px 0 14px;
+	background-color: #424242;
+	border: 1px solid #424242;
+}/*
+** Tabs
+*/.tc-tab-set.tc-vertical {
+	display: -webkit-flex;
+	display: flex;
+}.tc-tab-buttons {
+	font-size: 0.85em;
+	padding-top: 1em;
+	margin-bottom: -2px;
+}.tc-tab-buttons.tc-vertical  {
+	z-index: 100;
+	display: block;
+	padding-top: 14px;
+	vertical-align: top;
+	text-align: right;
+	margin-bottom: inherit;
+	margin-right: -1px;
+	max-width: 33%;
+	-webkit-flex: 0 0 auto;
+	flex: 0 0 auto;
+}.tc-tab-buttons button.tc-tab-selected {
+	color: rgba(255, 255, 255, 0.87);
+	background-color: #303030;
+	border-left: 1px solid #3a3a3a;
+	border-top: 1px solid #3a3a3a;
+	border-right: 1px solid #3a3a3a;
+}.tc-tab-buttons button {
+	color: rgba(255, 255, 255, 0.54);
+	padding: 3px 5px 3px 5px;
+	margin-right: 0.3em;
+	font-weight: normal;
+	border: none;
+	background: inherit;
+	background-color: transparent;
+	border-left: 1px solid transparent;
+	border-top: 1px solid transparent;
+	border-right: 1px solid transparent;
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}.tc-tab-buttons.tc-vertical button {
+	display: block;
+	width: 100%;
+	margin-top: 3px;
+	margin-right: 0;
+	text-align: right;
+	background-color: transparent;
+	border-left: 1px solid transparent;
+	border-bottom: 1px solid transparent;
+	border-right: none;
+	border-top-left-radius: 2px;
+	border-bottom-left-radius: 2px;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}.tc-tab-buttons.tc-vertical button.tc-tab-selected {
+	background-color: #303030;
+	border-right: 1px solid #303030;
+}.tc-tab-divider {
+	border-top: 1px solid #3a3a3a;
+}.tc-tab-divider.tc-vertical  {
+	display: none;
+}.tc-tab-content {
+	margin-top: 14px;
+}.tc-tab-content.tc-vertical  {
+	display: inline-block;
+	vertical-align: top;
+	padding-top: 0;
+	padding-left: 14px;
+	border-left: 1px solid transparent;
+	-webkit-flex: 1 0 70%;
+	flex: 1 0 70%;
+	overflow: auto;
+}.tc-sidebar-lists .tc-tab-buttons {
+	margin-bottom: -1px;
+}.tc-sidebar-lists .tc-tab-buttons button.tc-tab-selected {
+	background-color: #212121;
+	color: rgba(255, 255, 255, 0.87);
+	border-left: 1px solid #3a3a3a;
+	border-top: 1px solid #3a3a3a;
+	border-right: 1px solid #3a3a3a;
+}.tc-sidebar-lists .tc-tab-buttons button {
+	background-color: transparent;
+	color: rgba(255, 255, 255, 0.54);
+	border-left: 1px solid transparent;
+	border-top: 1px solid transparent;
+	border-right: 1px solid transparent;
+}.tc-sidebar-lists .tc-tab-divider {
+	border-top: 1px solid #3a3a3a;
+}.tc-more-sidebar > .tc-tab-set > .tc-tab-buttons > button {
+	display: block;
+	width: 100%;
+	background-color: transparent;
+	border-top: none;
+	border-left: none;
+	border-bottom: none;
+	border-right: 1px solid #ccc;
+	margin-bottom: inherit;
+}.tc-more-sidebar > .tc-tab-set > .tc-tab-buttons > button.tc-tab-selected {
+	background-color: #212121;
+	border: none;
+}/*
+** Manager
+*/.tc-manager-wrapper {}.tc-manager-controls {}.tc-manager-control {
+	margin: 0.5em 0;
+}.tc-manager-control select {
+	max-width: 100%;
+}.tc-manager-list {
+	width: 100%;
+	border-top: 1px solid rgba(255, 255, 255, 0.54);
+	border-left: 1px solid rgba(255, 255, 255, 0.54);
+	border-right: 1px solid rgba(255, 255, 255, 0.54);
+}.tc-manager-list-item {}.tc-manager-list-item-heading {
+	display: block;
+	width: 100%;
+	text-align: left;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.54);
+	padding: 3px;
+}.tc-manager-list-item-heading-selected {
+	font-weight: bold;
+	color: #303030;
+	fill: #303030;
+	background-color: rgba(255, 255, 255, 0.7);
+}.tc-manager-list-item-heading:hover {
+	background: #5656f3;
+	color: #303030;
+}.tc-manager-list-item-content {
+	display: flex;
+}.tc-manager-list-item-content-sidebar {
+	flex: 1 0;
+	background: transparent;
+	border-right: 0.5em solid rgba(255, 255, 255, 0.54);
+	border-bottom: 0.5em solid rgba(255, 255, 255, 0.54);
+	white-space: nowrap;
+}.tc-manager-list-item-content-item-heading {
+	display: block;
+	width: 100%;
+	text-align: left;
+	background: rgba(255, 255, 255, 0.54);
+	text-transform: uppercase;
+	font-size: 0.6em;
+	font-weight: bold;
+	padding: 0.5em 0 0.5em 0;
+}.tc-manager-list-item-content-item-body {
+	padding: 0 0.5em 0 0.5em;
+}.tc-manager-list-item-content-item-body > pre {
+	margin: 0.5em 0 0.5em 0;
+	border: none;
+	background: inherit;
+}.tc-manager-list-item-content-tiddler {
+	flex: 3 1;
+	border-left: 0.5em solid rgba(255, 255, 255, 0.54);
+	border-right: 0.5em solid rgba(255, 255, 255, 0.54);
+	border-bottom: 0.5em solid rgba(255, 255, 255, 0.54);
+}.tc-manager-list-item-content-item-body > table {
+	border: none;
+	padding: 0;
+	margin: 0;
+}.tc-manager-list-item-content-item-body > table td {
+	border: none;
+}.tc-manager-icon-editor > button {
+	width: 100%;
+}.tc-manager-icon-editor > button > svg,
+.tc-manager-icon-editor > button > button {
+	width: 100%;
+	height: auto;
+}/*
+** Import table
+*/.tc-import-table {
+	width: 100%;
+}.tc-import-table svg.tc-image-edit-button {
+	max-width: unset;
+}.tc-import-table th:first-of-type {
+	width: 10%;
+}.tc-import-table th:last-of-type {
+	width: 30%;
+}.tc-import-table .tc-row-disabled {
+	background: rgba(255, 255, 255, 0.12)10;
+	opacity: 0.8;
+}.tc-import-table .tc-row-warning {
+	background: #ffc9c950;
+}/*
+** Alerts
+*/.tc-alerts {
+	position: fixed;
+	top: 28px;
+	left: 0;
+	right: 0;
+	max-width: 50%;
+	z-index: 20000;
+}.tc-alert {
+	position: relative;
+	margin: 14px;
+	padding: 7px;
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	background-color: #303030;
+}.tc-alert-toolbar {
+	position: absolute;
+	top: 7px;
+	right: 7px;
+	line-height: 0;
+}.tc-alert-toolbar svg {
+	fill: rgba(255, 255, 255, 0.54);
+}.tc-alert-subtitle {
+	color: rgba(255, 255, 255, 0.54);
+	font-weight: bold;
+	font-size: 0.8em;
+	margin-bottom: 0.5em;
+}.tc-alert-body > p {
+	margin: 0;
+}.tc-alert-highlight {
+	color: rgba(255, 255, 255, 0.12);
+}@media (min-width: 1000px) {.tc-static-alert {
+		position: relative;
+	}.tc-static-alert-inner {
+		position: absolute;
+		z-index: 100;
+	}}.tc-static-alert-inner {
+	padding: 0 2px 2px 42px;
+	color: #aaaaaa;
+}/*
+** Floating drafts list
+*/.tc-drafts-list {
+	z-index: 2000;
+	position: fixed;
+	font-size: 0.8em;
+	left: 0;
+	bottom: 0;
+}.tc-drafts-list a {
+	margin: 0 0.5em;
+	padding: 4px 4px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	border: 1px solid #303030;
+	border-bottom: none;
+	background: #c80000;
+	color: #303030;
+	fill: #303030;
+}.tc-drafts-list a:hover {
+	text-decoration: none;
+	background: rgba(255, 255, 255, 0.7);
+	color: #303030;
+	fill: #303030;
+}.tc-drafts-list a svg {
+	width: 1em;
+	height: 1em;
+	vertical-align: text-bottom;
+}/*
+** Control panel
+*/.tc-control-panel td {
+	padding: 4px;
+}.tc-control-panel table, .tc-control-panel table input, .tc-control-panel table textarea {
+	width: 100%;
+}.tc-control-panel-setting {
+	border-top: 1px solid #212121;
+}.tc-plugin-info {
+	display: flex;
+	text-shadow: none;
+	border: 1px solid rgba(255, 255, 255, 0.54);
+	fill: rgba(255, 255, 255, 0.54);
+	background-color: #303030;
+	margin: 0.5em 0 0.5em 0;
+	padding: 4px;
+	align-items: center;
+}.tc-sidebar-lists a.tc-tiddlylink.tc-plugin-info {
+	color: #5656f3;
+}.tc-plugin-info-sub-plugins .tc-plugin-info {
+	margin: 0.5em;
+	background: #303030;
+}.tc-plugin-info-sub-plugin-indicator {
+	margin: -16px 1em 0 2em;
+}.tc-plugin-info-sub-plugin-indicator button {
+	color: #303030;
+	background: rgba(255, 255, 255, 0.7);
+	border-radius: 8px;
+	padding: 2px 7px;
+	font-size: 0.75em;
+}.tc-plugin-info-sub-plugins .tc-plugin-info-dropdown {
+	margin-left: 1em;
+	margin-right: 1em;
+}.tc-plugin-info-disabled {
+	background: -webkit-repeating-linear-gradient(45deg, #ff0, #ff0 10px, #eee 10px, #eee 20px);
+	background: repeating-linear-gradient(45deg, #ff0, #ff0 10px, #eee 10px, #eee 20px);
+}.tc-plugin-info-disabled:hover {
+	background: -webkit-repeating-linear-gradient(45deg, #aa0, #aa0 10px, #888 10px, #888 20px);
+	background: repeating-linear-gradient(45deg, #aa0, #aa0 10px, #888 10px, #888 20px);
+}a.tc-tiddlylink.tc-plugin-info:hover {
+	text-decoration: none;
+	background-color: #5656f3;
+	color: #303030;
+	fill: rgba(255, 255, 255, 0.7);
+}a.tc-tiddlylink.tc-plugin-info:hover > .tc-plugin-info-chunk > svg {
+	fill: #303030;
+}a.tc-tiddlylink.tc-plugin-info:hover > .tc-plugin-info-chunk .tc-plugin-info-stability {
+	border: 1px solid #303030;
+	color: #303030;
+}.tc-plugin-info-chunk {
+	margin: 2px;
+}.tc-plugin-info-chunk.tc-plugin-info-toggle {
+	flex-grow: 0;
+	flex-shrink: 0;
+	line-height: 1;
+}.tc-plugin-info-chunk.tc-plugin-info-icon {
+	flex-grow: 0;
+	flex-shrink: 0;
+	line-height: 1;
+	height: 2em;
+	width: 2em;
+	display: grid;
+}.tc-plugin-info-chunk.tc-plugin-info-description {
+	flex-grow: 1;
+}.tc-plugin-info-chunk .tc-plugin-info-stability {
+	margin-right: 4px;
+	padding: 1px 3px;
+	font-size: 0.8em;
+	border-radius: 4px;
+	font-weight: bold;
+}.tc-plugin-info-chunk .tc-plugin-info-stability-stable {
+	border: 1px solid #008000;
+	color: #008000;
+}.tc-plugin-info-chunk .tc-plugin-info-stability-experimental {
+	border: 1px solid #c07c00;
+	color: #c07c00;
+}.tc-plugin-info-chunk .tc-plugin-info-stability-deprecated {
+	border: 1px solid #ff0000;
+	color: #ff0000;
+}.tc-plugin-info-chunk .tc-plugin-info-stability-legacy {
+	border: 1px solid #0000ff;
+	color: #0000ff;
+}.tc-plugin-info-chunk.tc-plugin-info-buttons {
+	font-size: 0.8em;
+	line-height: 1.2;
+	flex-grow: 0;
+	flex-shrink: 0;
+	text-align: right;
+}.tc-plugin-info-chunk.tc-plugin-info-description h1 {
+	font-size: 1em;
+	line-height: 1.2;
+	margin: 2px 0 2px 0;
+}.tc-plugin-info-chunk.tc-plugin-info-description h2 {
+	font-size: 0.8em;
+	line-height: 1.2;
+	margin: 2px 0 2px 0;
+}.tc-plugin-info-chunk.tc-plugin-info-description div {
+	font-size: 0.8em;
+	line-height: 1.2;
+	margin: 2px 0 2px 0;
+}.tc-plugin-info-chunk.tc-plugin-info-toggle img, .tc-plugin-info-chunk.tc-plugin-info-toggle svg {
+	width: 1em;
+	height: 1em;
+}.tc-plugin-info-chunk.tc-plugin-info-icon img, .tc-plugin-info-chunk.tc-plugin-info-icon svg {
+	max-width: 2em;
+	max-height: 2em;
+	margin: auto;
+}.tc-plugin-info-dropdown {
+	border: 1px solid rgba(255, 255, 255, 0.54);
+	background: #303030;
+	margin-top: -8px;
+}.tc-plugin-info-dropdown-message {
+	background: #303030;
+	padding: 0.5em 1em 0.5em 1em;
+	font-weight: bold;
+	font-size: 0.8em;
+}.tc-plugin-info-dropdown-body {
+	padding: 1em 1em 0 1em;
+	background: #303030;
+}.tc-plugin-info-sub-plugins {
+	padding: 0.5em;
+	margin: 0 1em 1em 1em;
+	background: #424242;
+}.tc-install-plugin {
+	font-weight: bold;
+	background: green;
+	color: white;
+	fill: white;
+	border-radius: 4px;
+	padding: 3px;
+}.tc-install-plugin.tc-reinstall-downgrade {
+	background: red;
+}.tc-install-plugin.tc-reinstall {
+	background: blue;
+}.tc-install-plugin.tc-reinstall-upgrade {
+	background: orange;
+}.tc-check-list {
+	line-height: 2em;
+}.tc-check-list .tc-image-button {
+	height: 1.5em;
+}/*
+** Message boxes
+*/.tc-message-box {
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	background: #303030;
+	padding: 0px 21px 0px 21px;
+	font-size: 12px;
+	line-height: 18px;
+	color: rgba(255, 255, 255, 0.54);
+}.tc-message-box svg {
+	width: 1em;
+	height: 1em;
+	vertical-align: text-bottom;
+}/*
+** Pictures
+*/.tc-bordered-image {
+	border: 1px solid rgba(255, 255, 255, 0.54);
+	padding: 5px;
+	margin: 5px;
+}/*
+** Floats
+*/.tc-float-right {
+	float: right;
+}/* Float tc-clearfix. Needs to be used by elements that allow float:right in their content.
+** So the floating element does not overflow
+*/.tc-clearfix:after {
+	content: "";
+	clear: both;
+	display: table;
+}/* Fix overflow toc, manager and testcase output */
+.tc-tiddler-body .tc-tabbed-table-of-contents, .tc-manager-list-item-content, .tc-test-case-output {
+	overflow-x: auto;
+}/* A wrapper to fix table overflow */.tc-table-wrapper {
+	overflow-x: auto;
+}/*
+** Chooser
+*/.tc-chooser {
+	border-right: 1px solid rgba(255, 255, 255, 0.1);
+	border-left: 1px solid rgba(255, 255, 255, 0.1);
+}.tc-chooser-item {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	padding: 2px 4px 2px 14px;
+}.tc-drop-down .tc-chooser-item {
+	padding: 2px;
+}.tc-chosen,
+.tc-chooser-item:hover {
+	background-color: rgba(255, 255, 255, 0.1);
+	border-color: rgba(255, 255, 255, 0.04);
+}.tc-chosen .tc-tiddlylink {
+	cursor:default;
+}.tc-chooser-item .tc-tiddlylink {
+	display: block;
+	text-decoration: none;
+	background-color: transparent;
+}.tc-chooser-item:hover .tc-tiddlylink:hover {
+	text-decoration: none;
+}.tc-drop-down .tc-chosen .tc-tiddlylink,
+.tc-drop-down .tc-chooser-item .tc-tiddlylink:hover {
+	color: rgba(255, 255, 255, 0.7);
+}.tc-chosen > .tc-tiddlylink:before {
+	margin-left: -10px;
+	position: relative;
+	content: "» ";
+}.tc-chooser-item svg,
+.tc-chooser-item img{
+	max-width: 1em;
+	max-height: 1em;
+	vertical-align: middle;
+}.tc-language-chooser .tc-image-button img {
+	max-width: 2em;
+	max-height: 1em;
+	width: auto;
+	height: auto;
+	vertical-align: -0.15em;
+}/*
+** Palette swatches
+*/.tc-swatches-horiz {
+}.tc-swatches-horiz .tc-swatch {
+	display: inline-block;
+}.tc-swatch {
+	width: 2em;
+	height: 2em;
+	margin: 0.4em;
+	border: 1px solid #888;
+}input.tc-palette-manager-colour-input {
+	width: 100%;
+	padding: 0;
+}/*
+** Table of contents
+*/.tc-sidebar-lists .tc-table-of-contents {
+	white-space: nowrap;
+}.tc-table-of-contents button,
+.tc-table-of-contents .toc-item-muted {
+	color: rgba(255, 255, 255, 0.54);
+}.tc-table-of-contents svg {
+	width: 0.7em;
+	height: 0.7em;
+	vertical-align: middle;
+	fill: rgba(255, 255, 255, 0.54);
+}.tc-table-of-contents ol {
+	list-style-type: none;
+	padding-left: 0;
+}.tc-table-of-contents ol ol {
+	padding-left: 1em;
+}.tc-table-of-contents li {
+	font-size: 1.0em;
+	font-weight: bold;
+}.tc-table-of-contents li a {
+	font-weight: bold;
+}.tc-table-of-contents li li {
+	font-size: 0.95em;
+	font-weight: normal;
+	line-height: 1.4;
+}.tc-table-of-contents li li a {
+	font-weight: normal;
+}.tc-table-of-contents li li li {
+	font-size: 0.95em;
+	font-weight: normal;
+	line-height: 1.5;
+}.tc-table-of-contents li li li li {
+	font-size: 0.95em;
+	font-weight: normal;
+}.tc-tabbed-table-of-contents {
+	display: -webkit-flex;
+	display: flex;
+}.tc-tabbed-table-of-contents .tc-table-of-contents {
+	z-index: 100;
+	display: inline-block;
+	padding-left: 1em;
+	max-width: 50%;
+	-webkit-flex: 0 0 auto;
+	flex: 0 0 auto;
+	background: transparent;
+	border-left: 1px solid transparent;
+	border-top: 1px solid transparent;
+	border-bottom: 1px solid transparent;
+}.tc-tabbed-table-of-contents .tc-table-of-contents .toc-item > a,
+.tc-tabbed-table-of-contents .tc-table-of-contents .toc-item-selected > a {
+	display: block;
+	padding: 0.12em 1em 0.12em 0.25em;
+}.tc-tabbed-table-of-contents .tc-table-of-contents .toc-item > a {
+	border-top: 1px solid transparent;
+	border-left: 1px solid transparent;
+	border-bottom: 1px solid transparent;
+}.tc-tabbed-table-of-contents .tc-table-of-contents .toc-item > a:hover {
+	text-decoration: none;
+	border-top: 1px solid transparent;
+	border-left: 1px solid transparent;
+	border-bottom: 1px solid transparent;
+	background: transparent;
+}.tc-tabbed-table-of-contents .tc-table-of-contents .toc-item-selected > a {
+	border-top: 1px solid transparent;
+	border-left: 1px solid transparent;
+	border-bottom: 1px solid transparent;
+	background: #303030;
+	margin-right: -1px;
+}.tc-tabbed-table-of-contents .tc-table-of-contents .toc-item-selected > a:hover {
+	text-decoration: none;
+}.tc-tabbed-table-of-contents .tc-tabbed-table-of-contents-content {
+	display: inline-block;
+	vertical-align: top;
+	padding-left: 1.5em;
+	padding-right: 1.5em;
+	border: 1px solid transparent;
+	-webkit-flex: 1 0 50%;
+	flex: 1 0 50%;
+}/*
+** Dirty indicator
+*/html body svg.tc-image-save-button-dynamic .tc-image-save-button-dynamic-clean {
+	visibility: visible;
+}html body svg.tc-image-save-button-dynamic .tc-image-save-button-dynamic-dirty {
+	visibility: hidden;
+}html body.tc-dirty svg.tc-image-save-button-dynamic .tc-image-save-button-dynamic-clean {
+	visibility: hidden;
+}html body.tc-dirty svg.tc-image-save-button-dynamic .tc-image-save-button-dynamic-dirty {
+	visibility: visible;
+}html body.tc-dirty span.tc-dirty-indicator, html body.tc-dirty span.tc-dirty-indicator svg {
+	fill: #c80000;
+	color: #c80000;
+}/*
+** File inputs
+*/.tc-file-input-wrapper {
+	position: relative;
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: middle;
+}.tc-file-input-wrapper input[type=file] {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	font-size: 999px;
+	max-width: 100%;
+	max-height: 100%;
+	filter: alpha(opacity=0);
+	opacity: 0;
+	outline: none;
+	background: white;
+	cursor: pointer;
+	display: inline-block;
+}::-webkit-file-upload-button {
+	cursor:pointer;
+}/*
+** Thumbnail macros
+*/.tc-thumbnail-wrapper {
+	position: relative;
+	display: inline-block;
+	margin: 6px;
+	vertical-align: top;
+}.tc-thumbnail-right-wrapper {
+	float:right;
+	margin: 0.5em 0 0.5em 0.5em;
+}.tc-thumbnail-image {
+	text-align: center;
+	overflow: hidden;
+	border-radius: 3px;
+}.tc-thumbnail-image svg,
+.tc-thumbnail-image img {
+	filter: alpha(opacity=1);
+	opacity: 1;
+	min-width: 100%;
+	min-height: 100%;
+	max-width: 100%;
+}.tc-thumbnail-wrapper:hover .tc-thumbnail-image svg,
+.tc-thumbnail-wrapper:hover .tc-thumbnail-image img {
+	filter: alpha(opacity=0.8);
+	opacity: 0.8;
+}.tc-thumbnail-background {
+	position: absolute;
+	border-radius: 3px;
+}.tc-thumbnail-icon svg,
+.tc-thumbnail-icon img {
+	width: 3em;
+	height: 3em;
+	
+-webkit-filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+	-moz-filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+		filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+
+}.tc-thumbnail-wrapper:hover .tc-thumbnail-icon svg,
+.tc-thumbnail-wrapper:hover .tc-thumbnail-icon img {
+	fill: #fff;
+	
+-webkit-filter: drop-shadow(3px 3px 4px rgba(0,0,0,0.6));
+	-moz-filter: drop-shadow(3px 3px 4px rgba(0,0,0,0.6));
+		filter: drop-shadow(3px 3px 4px rgba(0,0,0,0.6));
+
+}.tc-thumbnail-icon {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: -webkit-flex;
+	-webkit-align-items: center;
+	-webkit-justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}.tc-thumbnail-caption {
+	position: absolute;
+	background-color: #777;
+	color: #fff;
+	text-align: center;
+	bottom: 0;
+	width: 100%;
+	filter: alpha(opacity=0.9);
+	opacity: 0.9;
+	line-height: 1.4;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+}.tc-thumbnail-wrapper:hover .tc-thumbnail-caption {
+	filter: alpha(opacity=1);
+	opacity: 1;
+}/*
+** Diffs
+*/.tc-diff-equal {
+	background-color: ;
+	color: rgba(255, 255, 255, 0.7);
+}.tc-diff-insert {
+	background-color: #aaefad;
+	color: rgba(255, 255, 255, 0.7);
+}.tc-diff-delete {
+	background-color: #ffc9c9;
+	color: rgba(255, 255, 255, 0.7);
+}.tc-diff-invisible {
+	background-color: ;
+	color: rgba(255, 255, 255, 0.54);
+}.tc-diff-tiddlers th {
+	text-align: right;
+	background: #303030;
+	font-weight: normal;
+	font-style: italic;
+}.tc-diff-tiddlers pre {
+	margin: 0;
+	padding: 0;
+	border: none;
+	background: none;
+}/*
+** Errors
+*/.tc-error {
+	background: #f00;
+	color: #fff;
+}/*
+** Tree macro
+*/.tc-tree div {
+	padding-left: 14px;
+}.tc-tree ol {
+	list-style-type: none;
+	padding-left: 0;
+	margin-top: 0;
+}.tc-tree ol ol {
+	padding-left: 1em;
+}.tc-tree button {
+	color: #acacac;
+}.tc-tree svg {
+	fill: #acacac;
+}.tc-tree span svg {
+	width: 1em;
+	height: 1em;
+	vertical-align: baseline;
+}.tc-tree li span {
+	color: lightgray;
+}select {
+	color: rgba(255, 255, 255, 0.7);
+	background: #303030;
+}/*
+** Translink macro
+*/.tc-translink {
+	background-color: #2a2a2a;
+	border: 1px solid transparent;
+	padding: 0 3px;
+	border-radius: 3px;
+}div.tc-translink > div {
+	margin: 1em;
+}div.tc-translink > div > a:first-child > h1 {
+	font-size: 1.2em;
+	font-weight: bold;
+}span.tc-translink > a:first-child {
+	font-weight: bold;
+}/*
+** Classes for displaying globals
+*/.tc-global-tiddler-body {
+	padding: 0.25em;
+	border: 1px solid rgba(255, 255, 255, 0.7);
+	background-color: rgba(255, 255, 255, 0.54);
+	border-radius: 3px;
+}.tc-global-tiddler-body-heading {
+	margin: 0 0 0.25em 0;
+	font-weight: normal;
+}.tc-global-tiddler-body-type {
+	margin: 0 0 0.25em 0;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+}.tc-global-tiddler-body-details {
+	background-color: #303030;
+}.tc-global-tiddler-body pre {
+	margin: 0;
+	border: 1px solid rgba(255, 255, 255, 0.7);
+}/*
+** Utility classes for SVG icons
+*/.tc-fill-background {
+	fill: #303030;
+}.tc-network-activity-background {
+	fill: #448844;
+}/*
+** Test Cases
+*/.tc-test-case-wrapper {
+	border: 1px solid rgba(255, 255, 255, 0.7);
+	background-color: rgba(255, 255, 255, 0.54);
+	border-radius: 6px;
+}.tc-test-case-wrapper {
+	background-color: #c1eaff;
+}.tc-test-case-wrapper .tc-test-case-wrapper {
+	background-color: #E3B740;
+}.tc-test-case-wrapper .tc-test-case-wrapper .tc-test-case-wrapper {
+	background-color: #5FD564;
+}.tc-test-case-header {
+	font-weight: normal;
+	margin: 0.5em 0;
+	padding: 0 0.5em;
+}.tc-test-case-divider {
+	x-background-color: rgba(255, 255, 255, 0.54);
+}.tc-test-case-result-icon {
+	fill: #fff;
+	padding: 0.25em;
+	display: inline-block;
+	line-height: 0;
+	border-radius: 1em;
+	vertical-align: text-bottom;
+	margin-right: 0.25em;
+}.tc-test-case-result-icon-pass {
+	background-color: green;
+}.tc-test-case-result-icon-fail {
+	background-color: red;
+}.tc-test-case-result-icon svg {
+	width: 0.5em;
+	height: 0.5em;
+}.tc-test-case-header > h2 {
+	background: #303030;
+	border-radius: 4px;
+	padding: 0.25em;
+}.tc-test-case-header > h2,
+.tc-test-case-source > pre {
+	margin: 0;
+}.tc-test-case-header > h2 a.tc-tiddlylink-missing {
+	font-style: normal;
+}.tc-test-case-toolbar {
+	float: right;
+}.tc-test-case-toolbar svg {
+	fill: #5d5d5d;
+}.tc-test-case-toolbar .tc-drop-down {
+	font-size: 0.8em;
+}.tc-test-case-result-fail {
+	border: 1px solid rgba(255, 255, 255, 0.7);
+	background-color: #303030;
+	border-radius: 4px;
+	margin: 0 0.5em;
+	padding: 0;
+}.tc-test-case-result-fail-header {
+	background: #ffc9c9;
+	color: rgba(255, 255, 255, 0.7);
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	padding: 4px;
+}.tc-test-case-result-fail-body {
+	padding: 4px;
+}.tc-test-case-source > pre {
+	height: 100%;
+}.tc-test-case-narrative {
+	padding: 0.5em;
+}.tc-test-case-panes {
+	display: flex;
+	align-items: stretch;
+	flex-wrap: wrap;
+	padding: 0.5em;
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
+}.tc-test-case-source {
+	flex: 1 0 49%;
+	min-width: 250px;
+}.tc-test-case-source .tc-tab-content {
+	background: inherit;
+	margin: 0;
+}.tc-test-case-source .tc-tab-content .tc-field-table {
+	background: #303030;
+}.tc-test-case-source .tc-field-table {
+	width: 100%;
+}.tc-test-case-source table.tc-field-table {
+	margin: 0;
+}.tc-test-case-source .tc-tiddler-frame .tc-edit-texteditor {
+	margin: 0;
+}.tc-test-case-divider {
+	flex: 0 0 1.5%;
+}.tc-test-case-source .tc-tab-buttons {
+	padding-top: 0;
+}.tc-test-case-footer-toolbar {
+	display: flex;
+	justify-content: flex-end;
+}.tc-test-case-output {
+	box-shadow: inset 2px 2px 10px 0px rgba(255, 255, 255, 0.54);
+	background: #303030;
+	border-radius: 4px;
+	border: 1px solid rgba(255, 255, 255, 0.54);
+	flex: 1 0 49%;
+	min-width: 250px;
+	padding: 0.25em 1em;
+}/*
+** Flexbox utility classes
+*/.tc-flex {
+	display: -webkit-flex;
+	display: flex;
+}.tc-flex-column {
+	flex-direction: column;
+}.tc-flex-row {
+	flex-direction: row;
+}.tc-flex-grow-1 {
+	flex-grow: 1;
+}.tc-flex-grow-2 {
+	flex-grow: 2;
+}/*
+** Other utility classes
+*//* Horizontal gaps */.tc-tiny-gap {
+	margin-left: .25em;
+	margin-right: .25em;
+}.tc-tiny-gap-left {
+	margin-left: .25em;
+}.tc-tiny-gap-right {
+	margin-right: .25em;
+}.tc-small-gap {
+	margin-left: .5em;
+	margin-right: .5em;
+}.tc-small-gap-left {
+	margin-left: .5em;
+}.tc-small-gap-right {
+	margin-right: .5em;
+}.tc-big-gap {
+	margin-left: 1em;
+	margin-right: 1em;
+}.tc-big-gap-left {
+	margin-left: 1em;
+}.tc-big-gap-right {
+	margin-right: 1em;
+}.tc-word-break {
+	word-break: break-all;
+}/* Vertical gaps */.tc-tiny-v-gap-bottom {
+	margin-bottom: 3px;
+}/*!
+  Theme: Default
+  Description: Original highlight.js style
+  Author: (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
+  Maintainer: @highlightjs/core-team
+  Website: https://highlightjs.org/
+  License: see project LICENSE
+  Touched: 2021
+*/pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}.hljs{background:#f3f3f3;color:#444}.hljs-comment{color:#697070}.hljs-punctuation,.hljs-tag{color:#444a}.hljs-tag .hljs-attr,.hljs-tag .hljs-name{color:#444}.hljs-attribute,.hljs-doctag,.hljs-keyword,.hljs-meta .hljs-keyword,.hljs-name,.hljs-selector-tag{font-weight:700}.hljs-deletion,.hljs-number,.hljs-quote,.hljs-selector-class,.hljs-selector-id,.hljs-string,.hljs-template-tag,.hljs-type{color:#800}.hljs-section,.hljs-title{color:#800;font-weight:700}.hljs-link,.hljs-operator,.hljs-regexp,.hljs-selector-attr,.hljs-selector-pseudo,.hljs-symbol,.hljs-template-variable,.hljs-variable{color:#ab5656}.hljs-literal{color:#695}.hljs-addition,.hljs-built_in,.hljs-bullet,.hljs-code{color:#397300}.hljs-meta{color:#1f7199}.hljs-meta .hljs-string{color:#38a}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}pre.hljs {
+  padding: 0;
+}pre code.hljs {
+  padding: 0.5em;
+}.hljs {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  -webkit-text-size-adjust:none;
+}.hljs-comment,
+.hljs-quote {
+  color: #93a1a1;
+}/* Solarized Green */
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-addition {
+  color: #859900;
+}/* Solarized Cyan */
+.hljs-number,
+.hljs-string,
+.hljs-meta .hljs-string,
+.hljs-literal,
+.hljs-doctag,
+.hljs-regexp {
+  color: #2aa198;
+}/* Solarized Blue */
+.hljs-title,
+.hljs-section,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class {
+  color: #268bd2;
+}/* Solarized Yellow */
+.hljs-attribute,
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-class .hljs-title,
+.hljs-type {
+  color: #b58900;
+}/* Solarized Orange */
+.hljs-symbol,
+.hljs-bullet,
+.hljs-subst,
+.hljs-meta,
+.hljs-meta .hljs-keyword,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-link {
+  color: #cb4b16;
+}/* Solarized Red */
+.hljs-built_in,
+.hljs-deletion {
+  color: #dc322f;
+}.hljs-formula {
+  background: #eee8d5;
+}.hljs-emphasis {
+  font-style: italic;
+}.hljs-strong {
+  font-weight: bold;
+}
+.tc-sidebar-header {
+	text-shadow: 0 1px 0 transparent;
+}.tc-tiddler-info {
+	
+-webkit-box-shadow: inset 1px 2px 3px rgba(0,0,0,0.1);
+	-moz-box-shadow: inset 1px 2px 3px rgba(0,0,0,0.1);
+		box-shadow: inset 1px 2px 3px rgba(0,0,0,0.1);
+
+}@media screen {
+	.tc-tiddler-frame {
+		
+-webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+		box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+
+	}
+}@media (max-width: 999px) {
+	.tc-tiddler-frame {
+		
+-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+		box-shadow: none;
+
+	}
+}.tc-page-controls button svg, .tc-tiddler-controls button svg, .tc-topbar button svg {
+	
+-webkit-transition: fill 150ms ease-in-out;
+	-moz-transition: fill 150ms ease-in-out;
+		transition: fill 150ms ease-in-out;
+
+}.tc-tiddler-controls button.tc-selected,
+.tc-page-controls button.tc-selected {
+	
+-webkit-filter: drop-shadow(0px -1px 2px rgba(0,0,0,0.25));
+	-moz-filter: drop-shadow(0px -1px 2px rgba(0,0,0,0.25));
+		filter: drop-shadow(0px -1px 2px rgba(0,0,0,0.25));
+
+}.tc-tiddler-frame input.tc-edit-texteditor,
+.tc-tiddler-frame select.tc-edit-texteditor {
+	
+-webkit-box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.15);
+		box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.15);
+
+}.tc-edit-tags {
+	
+-webkit-box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.15);
+		box-shadow: inset 0 1px 8px rgba(0, 0, 0, 0.15);
+
+}.tc-tiddler-frame .tc-edit-tags input.tc-edit-texteditor {
+	
+-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+		box-shadow: none;
+
+	border: none;
+	outline: none;
+}textarea.tc-edit-texteditor {
+	font-family: ;
+}canvas.tc-edit-bitmapeditor  {
+	
+-webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+		box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+
+}.tc-drop-down {
+	border-radius: 4px;
+	
+-webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+		box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+
+}.tc-block-dropdown {
+	border-radius: 4px;
+	
+-webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+		box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+
+}.tc-modal {
+	border-radius: 6px;
+	
+-webkit-box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+	-moz-box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+		box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+
+}.tc-modal-footer {
+	border-radius: 0 0 6px 6px;
+	
+-webkit-box-shadow: inset 0 1px 0 #fff;
+	-moz-box-shadow: inset 0 1px 0 #fff;
+		box-shadow: inset 0 1px 0 #fff;
+;
+}.tc-alert {
+	border-radius: 6px;
+	
+-webkit-box-shadow: 0 3px 7px rgba(0,0,0,0.6);
+	-moz-box-shadow: 0 3px 7px rgba(0,0,0,0.6);
+		box-shadow: 0 3px 7px rgba(0,0,0,0.6);
+
+}.tc-notification {
+	border-radius: 6px;
+	
+-webkit-box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+	-moz-box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+		box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+
+	text-shadow: 0 1px 0 rgba(255,255,255, 0.8);
+}.tc-sidebar-lists .tc-tab-set .tc-tab-divider {
+	border-top: none;
+	height: 1px;
+	
+background-image: linear-gradient(left, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.0) 100%);
+background-image: -o-linear-gradient(left, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.0) 100%);
+background-image: -moz-linear-gradient(left, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.0) 100%);
+background-image: -webkit-linear-gradient(left, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.0) 100%);
+background-image: -ms-linear-gradient(left, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.0) 100%);
+
+}.tc-more-sidebar > .tc-tab-set > .tc-tab-buttons > button {
+	
+background-image: linear-gradient(left, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.1) 100%);
+background-image: -o-linear-gradient(left, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.1) 100%);
+background-image: -moz-linear-gradient(left, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.1) 100%);
+background-image: -webkit-linear-gradient(left, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.1) 100%);
+background-image: -ms-linear-gradient(left, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.1) 100%);
+
+}.tc-more-sidebar > .tc-tab-set > .tc-tab-buttons > button.tc-tab-selected {
+	
+background-image: linear-gradient(left, rgba(0,0,0,0.05) 0%, rgba(255,255,255,0.05) 100%);
+background-image: -o-linear-gradient(left, rgba(0,0,0,0.05) 0%, rgba(255,255,255,0.05) 100%);
+background-image: -moz-linear-gradient(left, rgba(0,0,0,0.05) 0%, rgba(255,255,255,0.05) 100%);
+background-image: -webkit-linear-gradient(left, rgba(0,0,0,0.05) 0%, rgba(255,255,255,0.05) 100%);
+background-image: -ms-linear-gradient(left, rgba(0,0,0,0.05) 0%, rgba(255,255,255,0.05) 100%);
+
+}.tc-message-box img {
+	
+-webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+	-moz-box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+		box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+
+}.tc-plugin-info {
+	
+-webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+	-moz-box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+		box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+
+}
+/* multicolumn layout using flexbox courtesy from Bootstrap 4.3.1*/
+.flex-row {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+/*   margin-right: -15px;
+   margin-left: -15px;*/
+}
+
+.flex-col,
+.flex-col-1, 
+.flex-col-2, 
+.flex-col-3,
+.flex-col-4 {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+/* for small screen width>=576px
+https://getbootstrap.com/docs/4.3/layout/grid/
+*/
+@media (min-width: 576px) {
+.flex-col   {flex: 1 1 0; max-width: 100%;}
+.flex-col-1 {flex: 0 0 25%; max-width:25%}
+.flex-col-2 {flex: 0 0 50%; max-width:50%}
+.flex-col-3 {flex: 0 0 75%; max-width:75%}
+.flex-col-4 {flex: 0 0 100%; max-width:100%}
+}
+
+.flex-col   > :first-child,
+.flex-col-1 > :first-child,
+.flex-col-2 > :first-child,
+.flex-col-3 > :first-child,
+.flex-col-4 > :first-child {
+  margin-top: 0;}
+
+
+/* Alignment */
+.flex-align-items-center {
+  align-items: center !important;
+}
+.flex-justify-content-center {
+  justify-content: center !important;
+}
+
+.flex-no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}.tc-tab-buttons button:hover{
+  background-color: dodgerBlue;
+  color: #fff;
+}
+.tc-tab-buttons button.tc-tab-selected{
+  color:dodgerBlue; 
+  font-weight:bold;
+}
+.tc-tab-buttons button.tc-tab-selected:hover{
+  background-color: dodgerBlue;
+  color: #fff;
+}@charset "UTF-8";
+.sortable thead th:not(.no-sort) {
+  cursor: pointer;
+}
+.sortable thead th:not(.no-sort)::after, .sortable thead th:not(.no-sort)::before {
+  transition: color 0.1s ease-in-out;
+  font-size: 1.2em;
+  color: transparent;
+}
+.sortable thead th:not(.no-sort)::after {
+  margin-left: 3px;
+  content: "▸";
+}
+.sortable thead th:not(.no-sort):hover::after {
+  color: inherit;
+}
+.sortable thead th:not(.no-sort)[aria-sort=descending]::after {
+  color: inherit;
+  content: "▾";
+}
+.sortable thead th:not(.no-sort)[aria-sort=ascending]::after {
+  color: inherit;
+  content: "▴";
+}
+.sortable thead th:not(.no-sort).indicator-left::after {
+  content: "";
+}
+.sortable thead th:not(.no-sort).indicator-left::before {
+  margin-right: 3px;
+  content: "▸";
+}
+.sortable thead th:not(.no-sort).indicator-left:hover::before {
+  color: inherit;
+}
+.sortable thead th:not(.no-sort).indicator-left[aria-sort=descending]::before {
+  color: inherit;
+  content: "▾";
+}
+.sortable thead th:not(.no-sort).indicator-left[aria-sort=ascending]::before {
+  color: inherit;
+  content: "▴";
+}
+
+.sortable {
+  border-spacing: 0;
+}
+.sortable thead th {
+  font-weight: normal;
+  text-align: left;
+  text-transform: capitalize;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+.sortable td,
+.sortable th {
+  padding: 5px;
+  white-space: nowrap;
+}
+.sortable td:first-child,
+.sortable th:first-child {
+  border-top-left-radius: 4px;
+}
+.sortable td:last-child,
+.sortable th:last-child {
+  border-top-right-radius: 4px;
+}
+
+/*# sourceMappingURL=sortable.css.map */
+.table-tight{
+	font-size:.8em
+}
+.table-center{
+	margin:0 auto
+}
+.table-caption-top caption{
+	caption-side:top;
+	margin-bottom:.2rem
+}
+.table-caption-top-left caption{
+	caption-side:top;
+	text-align: left;
+	margin-bottom:.2rem
+}
+.table-striped-row tr:nth-child(even) td{
+	background-color:#f3f6f6
+}
+.table-striped-col tbody tr td:nth-child(odd){
+	background-color:#f3f6f6
+}
+.table-borderless,.table-borderless thead td,.table-borderless th,.table-borderless tr,.table-borderless td{
+	border:0
+}
+.table-lines thead td,.table-lines th{
+	border-bottom:2px solid #ddd;
+	background-color:unset
+}
+.table-lines td{
+	border-bottom:1px solid #ddd;
+	background-color:unset
+}
+.table-hover tbody tr:hover{
+	color:#212529;
+	background-color:#e6e6e6
+}
+.table-hover-yellow tbody tr:hover{
+	background-color:#ffc
+}
+.table-hover-cyan tbody tr:hover{
+	background-color:#e6ffff
+}
+.thead-primary thead td,.thead-primary th{
+	background-color:#007bff;
+	color:#fff
+}
+.thead-secondary thead td,.thead-secondary th{
+	background-color:#6c757d;
+	color:#fff
+}
+.thead-success thead td,.thead-success th{
+	background-color:#28a745;
+	color:#fff
+}
+.thead-warning thead td,.thead-warning th{
+	background-color:#ffc107;
+	color:#fff
+}
+.thead-danger thead td,.thead-danger th{
+	background-color:#dc3545;
+	color:#fff
+}
+.thead-info thead td,.thead-info th{
+	background-color:#17a2b8;
+	color:#fff
+}
+.thead-dark thead td,.thead-dark th{
+	background-color:#343a40;
+	color:#fff
+}
+.thead-light thead td,.thead-light th{
+	background-color:#f8f9fa;
+	color:#212529
+}
+.thead-primary>thead>tr>td svg,.thead-primary>thead>tr>th svg,.thead-secondary>thead>tr>td svg,.thead-secondary>thead>tr>th svg,.thead-success>thead>tr>td svg,.thead-success>thead>tr>th svg,.thead-warning>thead>tr>td svg,.thead-warning>thead>tr>th svg,.thead-danger>thead>tr>td svg,.thead-danger>thead>tr>th svg,.thead-info>thead>tr>td svg,.thead-info>thead>tr>th svg,.thead-dark>thead>tr>td svg,.thead-dark>thead>tr>th svg{
+	fill:#fff;
+	padding:0 0 3px 0
+}
+.thead-primary th .tc-tiddlylink,.thead-primary th a,.thead-secondary th .tc-tiddlylink,.thead-primary th a,.thead-success th .tc-tiddlylink,.thead-primary th a,.thead-warning th .tc-tiddlylink,.thead-primary th a,.thead-danger th .tc-tiddlylink,.thead-primary th a,.thead-info th .tc-tiddlylink,.thead-primary th a,.thead-dark th .tc-tiddlylink,.thead-primary th a{
+	color:#fff
+}
+/**
+ * Tooltip Styles
+ */
+
+/* Base styles for the element that has a tooltip */
+[data-tooltip],
+.tooltip {
+  position: relative;
+  cursor: pointer;
+}
+
+/* Base styles for the entire tooltip */
+[data-tooltip]:before,
+[data-tooltip]:after,
+.tooltip:before,
+.tooltip:after {
+  position: absolute;
+  visibility: hidden;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -webkit-transition: 
+    opacity 0.2s ease-in-out,
+    visibility 0.2s ease-in-out,
+    -webkit-transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+  -moz-transition:    
+    opacity 0.2s ease-in-out,
+    visibility 0.2s ease-in-out,
+    -moz-transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+  transition:         
+    opacity 0.2s ease-in-out,
+    visibility 0.2s ease-in-out,
+    transform 0.2s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform:    translate3d(0, 0, 0);
+  transform:         translate3d(0, 0, 0);
+  pointer-events: none;
+}
+
+/* Show the entire tooltip on hover and focus */
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after,
+[data-tooltip]:focus:before,
+[data-tooltip]:focus:after,
+.tooltip:hover:before,
+.tooltip:hover:after,
+.tooltip:focus:before,
+.tooltip:focus:after {
+  visibility: visible;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
+/* Base styles for the tooltip's directional arrow */
+.tooltip:before,
+[data-tooltip]:before {
+  z-index: 1001;
+  border: 6px solid transparent;
+  background: transparent;
+  content: "";
+}
+
+/* Base styles for the tooltip's content area */
+.tooltip:after,
+[data-tooltip]:after {
+  z-index: 1000;
+  padding: 8px;
+  width: 160px;
+  background-color: #000;
+  background-color: hsla(0, 0%, 20%, 0.9);
+  color: #fff;
+  content: attr(data-tooltip);
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+/* Directions */
+
+/* Top (default) */
+[data-tooltip]:before,
+[data-tooltip]:after,
+.tooltip:before,
+.tooltip:after,
+.tooltip-top:before,
+.tooltip-top:after {
+  bottom: 100%;
+  left: 50%;
+}
+
+[data-tooltip]:before,
+.tooltip:before,
+.tooltip-top:before {
+  margin-left: -6px;
+  margin-bottom: -12px;
+  border-top-color: #000;
+  border-top-color: hsla(0, 0%, 20%, 0.9);
+}
+
+/* Horizontally align top/bottom tooltips */
+[data-tooltip]:after,
+.tooltip:after,
+.tooltip-top:after {
+  margin-left: -80px;
+}
+
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after,
+[data-tooltip]:focus:before,
+[data-tooltip]:focus:after,
+.tooltip:hover:before,
+.tooltip:hover:after,
+.tooltip:focus:before,
+.tooltip:focus:after,
+.tooltip-top:hover:before,
+.tooltip-top:hover:after,
+.tooltip-top:focus:before,
+.tooltip-top:focus:after {
+  -webkit-transform: translateY(-12px);
+  -moz-transform:    translateY(-12px);
+  transform:         translateY(-12px); 
+}
+
+/* Left */
+.tooltip-left:before,
+.tooltip-left:after {
+  right: 100%;
+  bottom: 50%;
+  left: auto;
+}
+
+.tooltip-left:before {
+  margin-left: 0;
+  margin-right: -12px;
+  margin-bottom: 0;
+  border-top-color: transparent;
+  border-left-color: #000;
+  border-left-color: hsla(0, 0%, 20%, 0.9);
+}
+
+.tooltip-left:hover:before,
+.tooltip-left:hover:after,
+.tooltip-left:focus:before,
+.tooltip-left:focus:after {
+  -webkit-transform: translateX(-12px);
+  -moz-transform:    translateX(-12px);
+  transform:         translateX(-12px); 
+}
+
+/* Bottom */
+.tooltip-bottom:before,
+.tooltip-bottom:after {
+  top: 100%;
+  bottom: auto;
+  left: 50%;
+}
+
+.tooltip-bottom:before {
+  margin-top: -12px;
+  margin-bottom: 0;
+  border-top-color: transparent;
+  border-bottom-color: #000;
+  border-bottom-color: hsla(0, 0%, 20%, 0.9);
+}
+
+.tooltip-bottom:hover:before,
+.tooltip-bottom:hover:after,
+.tooltip-bottom:focus:before,
+.tooltip-bottom:focus:after {
+  -webkit-transform: translateY(12px);
+  -moz-transform:    translateY(12px);
+  transform:         translateY(12px); 
+}
+
+/* Right */
+.tooltip-right:before,
+.tooltip-right:after {
+  bottom: 50%;
+  left: 100%;
+}
+
+.tooltip-right:before {
+  margin-bottom: 0;
+  margin-left: -12px;
+  border-top-color: transparent;
+  border-right-color: #000;
+  border-right-color: hsla(0, 0%, 20%, 0.9);
+}
+
+.tooltip-right:hover:before,
+.tooltip-right:hover:after,
+.tooltip-right:focus:before,
+.tooltip-right:focus:after {
+  -webkit-transform: translateX(12px);
+  -moz-transform:    translateX(12px);
+  transform:         translateX(12px); 
+}
+
+/* Move directional arrows down a bit for left/right tooltips */
+.tooltip-left:before,
+.tooltip-right:before {
+  top: 3px;
+}
+
+/* Vertically center tooltip content for left/right tooltips */
+.tooltip-left:after,
+.tooltip-right:after {
+  margin-left: 0;
+  margin-bottom: -16px;
+}/* Tooltip container */
+.xtooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.xtooltip .xtooltiptext {
+  visibility: hidden;
+  width: 200px;
+  background-color: black;
+  color: #fff;
+  text-align: left;
+  padding: 5px 0;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.xtooltip:hover .xtooltiptext {
+  visibility: visible;
+}
+</style>
+</head>
+<body class="tc-body">
+
+<section class="tc-story-river tc-static-story-river">
+<a name="$:/Import">
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists tc-tiddler-system " data-tags="" data-tiddler-title="$:/Import" role="article"><div class="tc-tiddler-title tc-clearfix"><div class="tc-titlebar"><span class="tc-tiddler-controls"><button aria-expanded="false" aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><span class=" tc-reveal" hidden="true"></span><button aria-label="Edit this tiddler" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span><h2 class="tc-title" title="This is a system tiddler"><span class="tc-system-title-prefix">$:/</span>Import</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle tc-clearfix">4th February 2025 at 9:12pm</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"></div></div><div class="tc-tiddler-body tc-clearfix tc-reveal"><p>The following tiddlers were imported:</p><ol><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Log-Summary">202502042048-Log-Summary</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Tag_Stats">202502042048-Tag_Stats</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Menu">202502042048-Menu</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Dashboard">202502042048-Dashboard</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-General-Stats">202502042048-General-Stats</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Buffs">202502042048-Buffs</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Boons">202502042048-Boons</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-Modifiers">202502042048-Damage-Modifiers</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Healers">202502042048-Healers</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Healers-Chronomancer-Argus%20Etherpaw">202502042048-Healers-Chronomancer-Argus Etherpaw</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Healers-Willbender-Fenrir%20Flamepaw">202502042048-Healers-Willbender-Fenrir Flamepaw</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Healers-Virtuoso-Cub%20Of%20The%20Frostpaw">202502042048-Healers-Virtuoso-Cub Of The Frostpaw</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Healers-Catalyst-Talenai">202502042048-Healers-Catalyst-Talenai</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Healers-Berserker-Cub%20On%20The%20Spectrum">202502042048-Healers-Berserker-Cub On The Spectrum</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Healers-Firebrand-Daivey">202502042048-Healers-Firebrand-Daivey</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Healers-Weaver-Talenai">202502042048-Healers-Weaver-Talenai</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Healers-Harbinger-Nattmara%20Nightmare">202502042048-Healers-Harbinger-Nattmara Nightmare</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Healers-Scrapper-B%C3%AEgf%C3%B4%C3%B4t">202502042048-Healers-Scrapper-Bîgfôôt</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Healers-Catalyst-Lyana%20Cassandra">202502042048-Healers-Catalyst-Lyana Cassandra</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Healers-Tempest-Lyana%20Cassandra">202502042048-Healers-Tempest-Lyana Cassandra</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Healers-Weaver-Lyana%20Cassandra">202502042048-Healers-Weaver-Lyana Cassandra</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Profession_Damage_Mods">202502042048-Profession_Damage_Mods</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Shared-Damage-Mods">202502042048-Shared-Damage-Mods</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Defenses">202502042048-Defenses</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Support">202502042048-Support</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Offensive">202502042048-Offensive</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Uptimes">202502042048-Uptimes</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Self-Generation">202502042048-Self-Generation</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Squad-Generation">202502042048-Squad-Generation</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Group-Generation">202502042048-Group-Generation</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Conditions-In">202502042048-Conditions-In</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Debuffs-Out">202502042048-Debuffs-Out</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Conditions-Out">202502042048-Conditions-Out</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Support-Buffs">202502042048-Support-Buffs</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Defensive-Buffs">202502042048-Defensive-Buffs</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Offensive-Buffs">202502042048-Offensive-Buffs</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Debuffs-In">202502042048-Debuffs-In</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Squad-Composition">202502042048-Squad-Composition</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Heal-Stats">202502042048-Heal-Stats</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Personal-Buffs">202502042048-Personal-Buffs</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Personal-Buffs-Chronomancer">202502042048-Personal-Buffs-Chronomancer</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Personal-Buffs-Willbender">202502042048-Personal-Buffs-Willbender</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Personal-Buffs-Tempest">202502042048-Personal-Buffs-Tempest</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Personal-Buffs-Scrapper">202502042048-Personal-Buffs-Scrapper</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Personal-Buffs-Virtuoso">202502042048-Personal-Buffs-Virtuoso</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Personal-Buffs-Soulbeast">202502042048-Personal-Buffs-Soulbeast</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Personal-Buffs-Spellbreaker">202502042048-Personal-Buffs-Spellbreaker</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Personal-Buffs-Firebrand">202502042048-Personal-Buffs-Firebrand</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Personal-Buffs-Weaver">202502042048-Personal-Buffs-Weaver</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Personal-Buffs-Reaper">202502042048-Personal-Buffs-Reaper</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Personal-Buffs-Berserker">202502042048-Personal-Buffs-Berserker</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Personal-Buffs-Deadeye">202502042048-Personal-Buffs-Deadeye</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Personal-Buffs-Catalyst">202502042048-Personal-Buffs-Catalyst</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Personal-Buffs-Daredevil">202502042048-Personal-Buffs-Daredevil</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Personal-Buffs-Herald">202502042048-Personal-Buffs-Herald</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Personal-Buffs-Holosmith">202502042048-Personal-Buffs-Holosmith</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Personal-Buffs-Mirage">202502042048-Personal-Buffs-Mirage</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Personal-Buffs-Specter">202502042048-Personal-Buffs-Specter</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Personal-Buffs-Thief">202502042048-Personal-Buffs-Thief</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Personal-Buffs-Harbinger">202502042048-Personal-Buffs-Harbinger</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Personal-Buffs-Vindicator">202502042048-Personal-Buffs-Vindicator</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Personal-Buffs-Bladesworn">202502042048-Personal-Buffs-Bladesworn</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Personal-Buffs-Scourge">202502042048-Personal-Buffs-Scourge</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Personal-Buffs-Dragonhunter">202502042048-Personal-Buffs-Dragonhunter</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Personal-Buffs-Renegade">202502042048-Personal-Buffs-Renegade</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-Modifiers-Willbender">202502042048-Damage-Modifiers-Willbender</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-Modifiers-Tempest">202502042048-Damage-Modifiers-Tempest</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-Modifiers-Scrapper">202502042048-Damage-Modifiers-Scrapper</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-Modifiers-Chronomancer">202502042048-Damage-Modifiers-Chronomancer</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-Modifiers-Virtuoso">202502042048-Damage-Modifiers-Virtuoso</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-Modifiers-Soulbeast">202502042048-Damage-Modifiers-Soulbeast</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-Modifiers-Spellbreaker">202502042048-Damage-Modifiers-Spellbreaker</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-Modifiers-Firebrand">202502042048-Damage-Modifiers-Firebrand</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-Modifiers-Weaver">202502042048-Damage-Modifiers-Weaver</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-Modifiers-Reaper">202502042048-Damage-Modifiers-Reaper</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-Modifiers-Berserker">202502042048-Damage-Modifiers-Berserker</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-Modifiers-Deadeye">202502042048-Damage-Modifiers-Deadeye</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-Modifiers-Catalyst">202502042048-Damage-Modifiers-Catalyst</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-Modifiers-Daredevil">202502042048-Damage-Modifiers-Daredevil</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-Modifiers-Herald">202502042048-Damage-Modifiers-Herald</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-Modifiers-Holosmith">202502042048-Damage-Modifiers-Holosmith</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-Modifiers-Mirage">202502042048-Damage-Modifiers-Mirage</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-Modifiers-Specter">202502042048-Damage-Modifiers-Specter</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-Modifiers-Thief">202502042048-Damage-Modifiers-Thief</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-Modifiers-Harbinger">202502042048-Damage-Modifiers-Harbinger</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-Modifiers-Vindicator">202502042048-Damage-Modifiers-Vindicator</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-Modifiers-Scourge">202502042048-Damage-Modifiers-Scourge</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-Modifiers-Bladesworn">202502042048-Damage-Modifiers-Bladesworn</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-Modifiers-Dragonhunter">202502042048-Damage-Modifiers-Dragonhunter</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-Modifiers-Renegade">202502042048-Damage-Modifiers-Renegade</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Skill-Usage-Chronomancer">202502042048-Skill-Usage-Chronomancer</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Skill-Usage-Willbender">202502042048-Skill-Usage-Willbender</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Skill-Usage-Tempest">202502042048-Skill-Usage-Tempest</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Skill-Usage-Scrapper">202502042048-Skill-Usage-Scrapper</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Skill-Usage-Virtuoso">202502042048-Skill-Usage-Virtuoso</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Skill-Usage-Soulbeast">202502042048-Skill-Usage-Soulbeast</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Skill-Usage-Spellbreaker">202502042048-Skill-Usage-Spellbreaker</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Skill-Usage-Firebrand">202502042048-Skill-Usage-Firebrand</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Skill-Usage-Weaver">202502042048-Skill-Usage-Weaver</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Skill-Usage-Reaper">202502042048-Skill-Usage-Reaper</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Skill-Usage-Berserker">202502042048-Skill-Usage-Berserker</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Skill-Usage-Deadeye">202502042048-Skill-Usage-Deadeye</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Skill-Usage-Catalyst">202502042048-Skill-Usage-Catalyst</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Skill-Usage-Daredevil">202502042048-Skill-Usage-Daredevil</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Skill-Usage-Herald">202502042048-Skill-Usage-Herald</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Skill-Usage-Holosmith">202502042048-Skill-Usage-Holosmith</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Skill-Usage-Mirage">202502042048-Skill-Usage-Mirage</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Skill-Usage-Specter">202502042048-Skill-Usage-Specter</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Skill-Usage-Thief">202502042048-Skill-Usage-Thief</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Skill-Usage-Harbinger">202502042048-Skill-Usage-Harbinger</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Skill-Usage-Vindicator">202502042048-Skill-Usage-Vindicator</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Skill-Usage-Scourge">202502042048-Skill-Usage-Scourge</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Skill-Usage-Bladesworn">202502042048-Skill-Usage-Bladesworn</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Skill-Usage-Dragonhunter">202502042048-Skill-Usage-Dragonhunter</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Skill-Usage-Renegade">202502042048-Skill-Usage-Renegade</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Skill-Usage">202502042048-Skill-Usage</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Overview">202502042048-Overview</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Combat-Resurrect">202502042048-Combat-Resurrect</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-FB-Pages">202502042048-FB-Pages</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-High-Scores">202502042048-High-Scores</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Mechanics">202502042048-Mechanics</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Minions">202502042048-Minions</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Minions-Chronomancer">202502042048-Minions-Chronomancer</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Minions-Scrapper">202502042048-Minions-Scrapper</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Minions-Virtuoso">202502042048-Minions-Virtuoso</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Minions-Firebrand">202502042048-Minions-Firebrand</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Minions-Reaper">202502042048-Minions-Reaper</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Minions-Deadeye">202502042048-Minions-Deadeye</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Minions-Soulbeast">202502042048-Minions-Soulbeast</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Minions-Mirage">202502042048-Minions-Mirage</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Minions-Willbender">202502042048-Minions-Willbender</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Minions-Catalyst">202502042048-Minions-Catalyst</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Minions-Tempest">202502042048-Minions-Tempest</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Top-Damage-By-Skill">202502042048-Top-Damage-By-Skill</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Player-Damage-By-Skill">202502042048-Player-Damage-By-Skill</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Catalyst-Talenai">202502042048-Damage-By-Skill-Catalyst-Talenai</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Catalyst-Ryau">202502042048-Damage-By-Skill-Catalyst-Ryau</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Reaper-Desecrator%20Bugalugs">202502042048-Damage-By-Skill-Reaper-Desecrator Bugalugs</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Soulbeast-Talon%20Snapshot">202502042048-Damage-By-Skill-Soulbeast-Talon Snapshot</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Weaver-Cub%20Of%20The%20Pandapaw">202502042048-Damage-By-Skill-Weaver-Cub Of The Pandapaw</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Scrapper-Asuran%20Batman">202502042048-Damage-By-Skill-Scrapper-Asuran Batman</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Weaver-Iltz%20Odd">202502042048-Damage-By-Skill-Weaver-Iltz Odd</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Willbender-Fenrir%20Flamepaw">202502042048-Damage-By-Skill-Willbender-Fenrir Flamepaw</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Willbender-Mansa%20Musa%20Ill">202502042048-Damage-By-Skill-Willbender-Mansa Musa Ill</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Berserker-Hildace">202502042048-Damage-By-Skill-Berserker-Hildace</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Virtuoso-Cub%20Of%20The%20Frostpaw">202502042048-Damage-By-Skill-Virtuoso-Cub Of The Frostpaw</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Mirage-Versanity">202502042048-Damage-By-Skill-Mirage-Versanity</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Thief-Spyderfly">202502042048-Damage-By-Skill-Thief-Spyderfly</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Holosmith-Bl%C3%AFpp%C3%AF">202502042048-Damage-By-Skill-Holosmith-Blïppï</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Weaver-Yvr%20Valcrist">202502042048-Damage-By-Skill-Weaver-Yvr Valcrist</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Berserker-Real%20Cel%20Alt">202502042048-Damage-By-Skill-Berserker-Real Cel Alt</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Berserker-Cub%20On%20The%20Spectrum">202502042048-Damage-By-Skill-Berserker-Cub On The Spectrum</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Willbender-Sleepy%20%C3%87harr">202502042048-Damage-By-Skill-Willbender-Sleepy Çharr</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Catalyst-Evey%20Linch">202502042048-Damage-By-Skill-Catalyst-Evey Linch</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Tempest-Ose%20Goetia">202502042048-Damage-By-Skill-Tempest-Ose Goetia</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Willbender-Daddy%20Dundee">202502042048-Damage-By-Skill-Willbender-Daddy Dundee</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Firebrand-C%20A%20L%20A%20F%20A%20T%20E">202502042048-Damage-By-Skill-Firebrand-C A L A F A T E</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Vindicator-Talon%20Valenzo">202502042048-Damage-By-Skill-Vindicator-Talon Valenzo</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Spellbreaker-Small%20Brain%20Ook%20Ook">202502042048-Damage-By-Skill-Spellbreaker-Small Brain Ook Ook</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Reaper-Croud%20Fry">202502042048-Damage-By-Skill-Reaper-Croud Fry</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Reaper-Cursed%20Touch">202502042048-Damage-By-Skill-Reaper-Cursed Touch</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Daredevil-Slootty">202502042048-Damage-By-Skill-Daredevil-Slootty</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Weaver-Tarkus%20Sootstorm">202502042048-Damage-By-Skill-Weaver-Tarkus Sootstorm</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Herald-Talon%20Valenzo">202502042048-Damage-By-Skill-Herald-Talon Valenzo</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Firebrand-Daivey">202502042048-Damage-By-Skill-Firebrand-Daivey</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Virtuoso-A%20F%20Kaptain">202502042048-Damage-By-Skill-Virtuoso-A F Kaptain</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Catalyst-Lyana%20Cassandra">202502042048-Damage-By-Skill-Catalyst-Lyana Cassandra</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Soulbeast-Ardhrixia">202502042048-Damage-By-Skill-Soulbeast-Ardhrixia</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Weaver-Doc%20Kuro">202502042048-Damage-By-Skill-Weaver-Doc Kuro</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Weaver-Talenai">202502042048-Damage-By-Skill-Weaver-Talenai</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Reaper-%C3%80p%C3%B3k">202502042048-Damage-By-Skill-Reaper-Àpók</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Firebrand-Daddy%20Rosta%20Dundee">202502042048-Damage-By-Skill-Firebrand-Daddy Rosta Dundee</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Deadeye-Radioactive%20Seer">202502042048-Damage-By-Skill-Deadeye-Radioactive Seer</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Tempest-Dendroth%20Smokepaw">202502042048-Damage-By-Skill-Tempest-Dendroth Smokepaw</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Chronomancer-Argus%20Etherpaw">202502042048-Damage-By-Skill-Chronomancer-Argus Etherpaw</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Spellbreaker-Lemmie%20Smash">202502042048-Damage-By-Skill-Spellbreaker-Lemmie Smash</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Scrapper-Rightnuto">202502042048-Damage-By-Skill-Scrapper-Rightnuto</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Tempest-Sell%20The%20Pc">202502042048-Damage-By-Skill-Tempest-Sell The Pc</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Berserker-Lemmie%20Smash">202502042048-Damage-By-Skill-Berserker-Lemmie Smash</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Bladesworn-Lemmie%20Smash">202502042048-Damage-By-Skill-Bladesworn-Lemmie Smash</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Harbinger-Nattmara%20Nightmare">202502042048-Damage-By-Skill-Harbinger-Nattmara Nightmare</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Daredevil-Spyderfly">202502042048-Damage-By-Skill-Daredevil-Spyderfly</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Spellbreaker-Caleer">202502042048-Damage-By-Skill-Spellbreaker-Caleer</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Dragonhunter-Lion%20Eljonson%20Xv">202502042048-Damage-By-Skill-Dragonhunter-Lion Eljonson Xv</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Scourge-Nyxs%20Styx">202502042048-Damage-By-Skill-Scourge-Nyxs Styx</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Chronomancer-Lillithmesmerini">202502042048-Damage-By-Skill-Chronomancer-Lillithmesmerini</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Willbender-M%C3%A4ncom%C3%A4nder">202502042048-Damage-By-Skill-Willbender-Mäncomänder</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Chronomancer-Not%20Worrying">202502042048-Damage-By-Skill-Chronomancer-Not Worrying</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Chronomancer-Phainetasm">202502042048-Damage-By-Skill-Chronomancer-Phainetasm</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Spellbreaker-Braindeadwarrior">202502042048-Damage-By-Skill-Spellbreaker-Braindeadwarrior</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Virtuoso-Versanity">202502042048-Damage-By-Skill-Virtuoso-Versanity</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Daredevil-Hannemia">202502042048-Damage-By-Skill-Daredevil-Hannemia</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Harbinger-L%C3%A6n%C3%A4">202502042048-Damage-By-Skill-Harbinger-Lænä</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Willbender-Lion%20Eljonson%20Xv">202502042048-Damage-By-Skill-Willbender-Lion Eljonson Xv</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Spellbreaker-Perhapicus">202502042048-Damage-By-Skill-Spellbreaker-Perhapicus</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Scrapper-Great%20Twunk">202502042048-Damage-By-Skill-Scrapper-Great Twunk</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Tempest-Lyana%20Cassandra">202502042048-Damage-By-Skill-Tempest-Lyana Cassandra</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Specter-Spyderfly">202502042048-Damage-By-Skill-Specter-Spyderfly</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Weaver-Lyana%20Cassandra">202502042048-Damage-By-Skill-Weaver-Lyana Cassandra</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Chronomancer-Haamess">202502042048-Damage-By-Skill-Chronomancer-Haamess</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Spellbreaker-Vyzix">202502042048-Damage-By-Skill-Spellbreaker-Vyzix</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage-By-Skill-Scrapper-B%C3%AEgf%C3%B4%C3%B4t">202502042048-Damage-By-Skill-Scrapper-Bîgfôôt</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Gear-Buff-Uptimes">202502042048-Gear-Buff-Uptimes</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Gear-Skill-Damage">202502042048-Gear-Skill-Damage</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Damage">202502042048-Damage</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-On-Tag-Review">202502042048-On-Tag-Review</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Mesmer-Clone-Usage">202502042048-Mesmer-Clone-Usage</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Support-Bubble-Chart">202502042048-Support-Bubble-Chart</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-DPS-Bubble-Chart">202502042048-DPS-Bubble-Chart</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-Utility-Bubble-Chart">202502042048-Utility-Bubble-Chart</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-DPS-Stats-chunkDamage">202502042048-DPS-Stats-chunkDamage</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-DPS-Stats-burstDamage">202502042048-DPS-Stats-burstDamage</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-DPS-Stats-ch5CaBurstDamage">202502042048-DPS-Stats-ch5CaBurstDamage</a></li><li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="#202502042048-DPS-Stats">202502042048-DPS-Stats</a></li></ol></div>
+</div>
+</a>
+</section>
+</body>
+</html>
